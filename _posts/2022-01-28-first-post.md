@@ -1,7 +1,7 @@
 ---
-title : "Welcom my first post"
+title : "Welcome my first post"
 data : 2022-01-28 15:46:00 -0400
 categories : jekyll update
 ---
 
-개인 블로그로 쓸 예정
+I plan to use this for my personal blog.
