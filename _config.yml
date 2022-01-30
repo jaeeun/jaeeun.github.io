@@ -18,17 +18,17 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Jaeeun's Graphics_"
+title                    : "Jaeeun's Graphics"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Making fun." # site tagline that appears below site title in masthead
 name                     : "Jae-eun Yang"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description              : "I am 3D Graphics Developer"
+url                      : "https://jaeeun.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "https://github.com/jaeeun/jaeeun.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Jaeeun's Graphics" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "Jaeeun's Graphics Blog" # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Jason Yang"
   avatar           : "assets/profile/sydney_with_son.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "3D Graphics Developer \n Android & Unreal & Unity"
+  bio              : "3D Graphics Developer<br>Android & Unreal & Unity"
   location         : "Republic of Korea"
   email            : #"yangtkboy@gmail.com"
   links:
