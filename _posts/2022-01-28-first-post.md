@@ -5,3 +5,8 @@ categories : life
 ---
 
 I plan to use this for my personal blog.
+
+How to create new post on the github io blog?
+
+Firstly, press 'Create new file' button of your github repository.
+Write file name like this format _posts/YYYY-MM-DD-name-of-post.md
