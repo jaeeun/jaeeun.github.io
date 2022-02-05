@@ -217,8 +217,9 @@ __double underscores__
 
 ## 2.8. 이미지
 ```
-![Alt text](/path/to/img.jpg)
-![Alt text](/path/to/img.jpg "Optional title")
+<!--![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg "Optional title")-->
+주석처리
 ```
 ![석촌호수 러버덕](https://github.com/jaeeun/jaeeun.github.io/blob/master/assets/images/RubberDuck.jpg)
 ![석촌호수 러버덕](https://github.com/jaeeun/jaeeun.github.io/blob/master/assets/images/RubberDuck.jpg "RubberDuck")
