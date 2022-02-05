@@ -213,8 +213,8 @@ __double underscores__
 ![Alt text](/path/to/img.jpg)
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0)
-![석촌호수 러버덕](http://cfile6.uf.tistory.com/image/2426E646543C9B4532C7B0 "RubberDuck")
+![석촌호수 러버덕](/images/RubberDuck.jpg)
+![석촌호수 러버덕](/images/RubberDuck.jpg "RubberDuck")
 
 사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
 
