@@ -177,20 +177,24 @@ Link: [Google][googlelink]
 Link: [Google][googlelink]
 [googlelink]: https://google.com "Go google"
 
-* 인라인 링크
+* 외부링크
 ```
-syntax: [Title](link)
+사용문법: [Title](link)
+적용예: [Google](https://google.com, "google link")
 ```
 Link: [Google](https://google.com, "google link")
 
 * 자동연결
 ```
-<http://example.com/>
-<address@example.com>
+일반적인 URL 혹은 이메일주소인 경우 적절한 형식으로 링크를 형성한다.
+
+* 외부링크: <http://example.com/>
+* 이메일링크: <address@example.com>
 ```
 
-<http://example.com/>
-<address@example.com>
+* 외부링크: <http://example.com/>
+* 이메일링크: <address@example.com>
+
 
 ## 2.7. 강조
 ```
@@ -207,6 +211,9 @@ _single underscores_
 __double underscores__
 ++underline++
 ~~cancelline~~
+
+> ```문장 중간에 사용할 경우에는 **띄어쓰기** 를 사용하는 것이 좋다.```   
+> 문장 중간에 사용할 경우에는 띄어쓰기를 사용하는 것이 좋다.
 
 ## 2.8. 이미지
 ```
