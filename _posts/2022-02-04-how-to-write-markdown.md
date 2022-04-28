@@ -1,7 +1,10 @@
 ---
 title : "How to write by Markdown"
 data : 2022-02-04 19:36:00 -0400
-categories : Tips
+tag : 
+ - tips
+ - markdown
+comments : true
 ---
 
 
