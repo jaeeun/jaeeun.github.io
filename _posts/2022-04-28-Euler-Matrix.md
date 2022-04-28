@@ -1,9 +1,10 @@
 ---
+layout : post
 title : "Transform Matrix to Euler"
-data : 2022-04-28 18:58:00 -0400
-categories : graphics
-
-
+data : 2022-04-28
+tag:
+- graphics
+comments: true
 ---
 
 # Euler / Matrix
