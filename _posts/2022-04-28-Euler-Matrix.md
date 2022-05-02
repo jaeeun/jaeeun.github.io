@@ -3,7 +3,7 @@ layout : post
 title : "Transform Matrix to Euler"
 data : 2022-04-28
 tag:
-- graphics
+- Graphics
 comments: true
 ---
 

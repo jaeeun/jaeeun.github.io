@@ -2,8 +2,8 @@
 title : "How to write by Markdown"
 data : 2022-02-04 19:36:00 -0400
 tag : 
- - tips
- - markdown
+ - Tips
+ - Markdown
 comments : true
 ---
 
@@ -223,8 +223,8 @@ __double underscores__
 ![Alt text](/path/to/img.jpg)
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
-![석촌호수 러버덕 이미지](../assets/images/RubberDuck.jpg)
-![석촌호수 러버덕 이미지](../assets/images/RubberDuck.jpg "RubberDuck")
+![석촌호수 러버덕 이미지](../assets/posting_img/test/RubberDuck.jpg)
+![석촌호수 러버덕 이미지](../assets/posting_img/test/RubberDuck.jpg "RubberDuck")
 
 사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
 
