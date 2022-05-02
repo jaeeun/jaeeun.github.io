@@ -38,14 +38,14 @@ disqus_shortname:   https-jaeeun-github-io
   #ad-client:
   #ad-slot:
 #bing-verify:
-#email:
-#twitter:            username
-#facebook:           username
-github-url:         "jaeeun"
+email:             "yangtkboy@gmail.com"
+#twitter:           username
+#facebook:          username
+github-url:        "jaeeun"
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 linkedin:          "jaeeunyang"
 #xing:              username
-instagram:          "yangtkboy"
+instagram:         "yangtkboy"
 #lastfm:            username
 #tumblr:            username
 #medium:            '@username'
