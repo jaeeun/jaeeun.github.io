@@ -6,6 +6,7 @@ reading_time:       true
 words_per_minute:   200
 logo:               "assets/profile/sydney_with_son.jpg"
 background:         'assets/img/placeholder-big.jpg'
+icon:               'favicon.png'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://jaeeun.github.io
