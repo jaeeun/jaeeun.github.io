@@ -10,16 +10,16 @@ img : "https://xbpeng.github.io/projects/DeepMimic/deepmimic_teaser.png"
 # DeepMimic Build Test
 ======================
 
-Home : https://xbpeng.github.io/projects/DeepMimic/index.html
-Code : https://github.com/xbpeng/DeepMimic
-Docker : https://hub.docker.com/r/aravindshankar/deepmimic_full_setup
+Home : <https://xbpeng.github.io/projects/DeepMimic/index.html/>
+Code : <https://github.com/xbpeng/DeepMimic/>
+Docker : <https://hub.docker.com/r/aravindshankar/deepmimic_full_setup/>
 
 
 
 ### Install & SetUp in Window10
 
-Docker : https://www.docker.com/get-started/
-WSL2 : https://docs.microsoft.com/ko-kr/windows/wsl/install-manual
+Docker : <https://www.docker.com/get-started/>
+WSL2 : <https://docs.microsoft.com/ko-kr/windows/wsl/install-manual/>
 ```
 (command prompt as Administrator)
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -55,8 +55,9 @@ check : docker ps -a
 ```
 
 ### Run
+```
 python DeepMimic.py --arg_file args/run_humanoid3d_spinkick_args.txt
-
+```
 
 
 ### Connect with Visual source code by SSH
