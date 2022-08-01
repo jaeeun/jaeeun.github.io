@@ -28,6 +28,7 @@ wsl_update_x64.msi download and install
 wsl --set-default-version 2
 wsl -l -v
 ```
+![wsl2 status](assets/posting_img/deepmimic_build/wsl2_status.png)
 
 ### if error like bellow
 WslRegisterDistribution failed with error: 0x80370102
@@ -58,7 +59,7 @@ check : docker ps -a
 ```
 python DeepMimic.py --arg_file args/run_humanoid3d_spinkick_args.txt
 ```
-
+![deepmimic run](assets/posting_img/deepmimic_build/deepmimic_run.png)
 
 ### Connect with Visual source code by SSH
 SSH install & Start SSH server
