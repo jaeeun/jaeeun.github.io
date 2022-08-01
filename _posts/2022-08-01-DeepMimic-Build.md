@@ -10,15 +10,15 @@ img : "https://xbpeng.github.io/projects/DeepMimic/deepmimic_teaser.png"
 # DeepMimic Build Test
 ======================
 
-Home : <https://xbpeng.github.io/projects/DeepMimic/index.html/>
-Code : <https://github.com/xbpeng/DeepMimic/>
+Home : <https://xbpeng.github.io/projects/DeepMimic/index.html/></br>
+Code : <https://github.com/xbpeng/DeepMimic/></br>
 Docker : <https://hub.docker.com/r/aravindshankar/deepmimic_full_setup/>
 
 
 
 ### Install & SetUp in Window10
 
-Docker : <https://www.docker.com/get-started/>
+Docker : <https://www.docker.com/get-started/></br>
 WSL2 : <https://docs.microsoft.com/ko-kr/windows/wsl/install-manual/>
 ```
 (command prompt as Administrator)
@@ -28,7 +28,7 @@ wsl_update_x64.msi download and install
 wsl --set-default-version 2
 wsl -l -v
 ```
-![wsl2 status](assets/posting_img/deepmimic_build/wsl2_status.png)
+![wsl2 status](../assets/posting_img/deepmimic_build/wsl2_status.png)
 
 ### if error like bellow
 WslRegisterDistribution failed with error: 0x80370102
@@ -59,7 +59,7 @@ check : docker ps -a
 ```
 python DeepMimic.py --arg_file args/run_humanoid3d_spinkick_args.txt
 ```
-![deepmimic run](assets/posting_img/deepmimic_build/deepmimic_run.png)
+![deepmimic run](../assets/posting_img/deepmimic_build/deepmimic_run.png)
 
 ### Connect with Visual source code by SSH
 SSH install & Start SSH server
