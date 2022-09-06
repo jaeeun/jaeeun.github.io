@@ -1,0 +1,39 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+{%- include resume/head.html -%}
+
+<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
+
+  {%- include resume/header.html -%}
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+
+      {%- if jekyll.environment == 'production' and site.gtm -%}
+        {%- include resume/gtm_body.html -%}
+      {%- endif -%}
+
+      {%- include resume/about.html -%}
+      {%- include resume/experience.html -%}
+      {%- include resume/projects.html -%}
+      {%- include resume/education.html -%}
+      {%- include resume/patents.html -%}
+
+      {%- if site.more_content -%}
+        {%- include resume/more.html -%}
+      {%- endif -%}
+
+    </div>
+  </main>
+
+  {%- include resume/footer.html -%}
+  {% if site.darkmode == false %}
+    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+  {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+<div class="container patents-container">
+    <h3 id="{{ site.patents_title | slugify | default: 'patents'}}">{{ site.patents_title | default: "Patents" }}</h3>
+    {% for patent in site.data.patents %}
+      {% include {{ patent.layout | default: 'left' | append: ".html" | prepend: "resume/v1/" }} item=patent %}
+    {% endfor %}
+  </div>
+  

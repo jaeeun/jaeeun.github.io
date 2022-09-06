@@ -1,0 +1,67 @@
+# Project template
+- name: C-lab Project
+  dates: Feb.2022 - present
+  qualification: (Creative Leader)
+  quote: >
+    Short overview of the project
+  description: >
+    Selected my subject as a creative project by Samsung Electronics.<br>
+    Leading and development my project as a CL(Creative Leader).
+
+- name: Digital Human
+  dates: Feb.2021 - Jan.2022
+  qualification: (Simulation)
+  description: >
+    CES (Home Interactive Avatar)<br>
+    Facial, Body Animation Sequence<br>
+    Voice to Speech Solution with ML<br>
+
+- name: Robot Simulation
+  dates: May.2019 - Jan.2021
+  qualification: (Simulation)
+  description: >
+    Robot motion Authoring Tool with ROS
+
+- name: AREmoji App.
+  dates: Feb.2018 - Apr.2019
+  qualification: (Graphics)
+  description: >
+    Rigid Body Animation with BVH <br>
+    Unity plugin for 3rd party Game apps
+
+- name: Samsung VR App.
+  dates: 2017.Feb - Jan.2018
+  qualification: (Graphics)
+  description: >
+    4K Streaming (FFmpeg filter)
+    Stabilization, Stitching, 
+
+- name: VR Rendering Solution
+  dates: May.2016 - Jan.2017
+  qualification: (Graphics)
+  description: >
+    Foveated Rendering
+    Octahedron Rendering
+
+- name: OnCircle App.
+  dates: May.2015 - Apr.2016
+  qualification: (Android)
+  description: >
+    Circle UI communicator. 
+    Their own communication 
+
+- name: Kids Mode in Galaxy
+  dates: May.2014 ~ Apr.2015
+  qualification: (Android)
+  description: >
+    Managing to deploy kids Apps in Samsung apps<br>
+    Development Kids UI, Parental Control UI
+
+- name: ETC apps
+  dates: Feb.2011 ~ Apr.2013
+  qualification: (Android)
+  description: >
+    Managing 3rd party apps, Maintain release Tablet projects, Quick panel, Video player
+
+
+

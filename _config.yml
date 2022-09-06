@@ -1,6 +1,7 @@
 # Site
-title:              Jaeeun
-bio:                'Jae-eun Yang<br>3D Graphics Developer<br>Android & Unreal & Unity'
+name:               Jae-eun Yang
+title:              Graphics SW Engineer
+bio:                '3D Graphics Developer<br>Android & Unreal & Unity'
 description:        ""
 reading_time:       true
 words_per_minute:   200
@@ -62,6 +63,8 @@ instagram:         "yangtkboy"
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
+phone:              "+82-10-5445-3499"
+website:            "jaeeun.github.io"
 
 # Gems
 gems:
