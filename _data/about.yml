@@ -1,0 +1,14 @@
+about_profile_image: assets/profile/myProfile.jpg
+about_content: |
+  <b>Objective :</b>
+  Seeking a Position as a Software Development Engineer in an organization where I can utilize my existing skills and knowledge with 12 years of work experience in Graphics and Android, and where I can enhance and develop new skills to contribute in the accomplishment of organizational goals.<br>
+
+  <br>
+  <b>Language :</b> Korean(Native), English(Intermediate)<br>
+  
+  <br>
+  <b>Skills : </b> <br>
+  - Graphics : <mark>OpenGL</mark> Rendering, Avatar Animations, <mark>Unreal Engine4</mark>, Unity (partial experience : Shader, Native Library)
+  - Android: <mark>Java</mark>, <mark>native library(C++)</mark>, <mark>RestAPI</mark>, GraphQL, Skia animation UI, <mark>Profiling</mark> (Adreno, Mali, Google Debugger), Strong <mark>Debugging</mark> and <mark>Optimizing</mark> applications or systems.
+  - ML (Basic level) : Python, Tensorflow, PyTorch
+  - ETC : FFmpeg, Git, SVN, Perforce, Docker, AWS, Jira, Confluence

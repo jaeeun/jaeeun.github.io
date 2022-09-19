@@ -1,67 +1,79 @@
 # Project template
-- name: C-lab Project
+- name: Fingeraction Project
   dates: Feb.2022 - present
-  qualification: (Creative Leader)
-  quote: >
-    Short overview of the project
+  qualification: (Project Leader)
+  quote: 
   description: >
-    Selected my subject as a creative project by Samsung Electronics.<br>
-    Leading and development my project as a CL(Creative Leader).
+   Participated in the in-house venture program as a project leader by organizing ideas and hiring team members. <br>
+   Started the project called ‘Fingeraction’, which recognizes finger gesture and makes Avatar animation automatically. 
+
+
 
 - name: Digital Human
   dates: Feb.2021 - Jan.2022
   qualification: (Simulation)
   description: >
-    CES (Home Interactive Avatar)<br>
-    Facial, Body Animation Sequence<br>
-    Voice to Speech Solution with ML<br>
+    Attended CES 2021 in Las Vegas as a developer of the project called ‘Home Interactive Avatar’, which connects the Digital Human with the robots and home networks.<br>
+    Researched and authored the patent about the “Voice to Speech Animation” with Machine Learning and BlendShapes of ARKit.
+
 
 - name: Robot Simulation
   dates: May.2019 - Jan.2021
   qualification: (Simulation)
   description: >
-    Robot motion Authoring Tool with ROS
+    Developed the robot simulation including physics, sensors, motions with ROS by using Unreal engine4.
+
 
 - name: AREmoji App.
   dates: Feb.2018 - Apr.2019
   qualification: (Graphics)
   description: >
-    Rigid Body Animation with BVH <br>
-    Unity plugin for 3rd party Game apps
+    Developed and managed the in-house renderer for the GLTF model with OpenGL (Model Load, PBS rendering) <br>
+    Developed the BodyTracking function with the Rigid Body Animations by using BVH data.<br>
+    Developed the plugin of Unity for 3rd party Game apps.
+
 
 - name: Samsung VR App.
   dates: 2017.Feb - Jan.2018
   qualification: (Graphics)
   description: >
-    4K Streaming (FFmpeg filter)
-    Stabilization, Stitching, 
+    Developed Samsung VR App based RESTful api and GraphQL.<br>
+    Developed 4K Streaming (Added the ‘Stitching’ solution into the FFmpeg filter in the AWS docker.)<br>
+    Developed the ‘Stabilization’ solution.
+
 
 - name: VR Rendering Solution
   dates: May.2016 - Jan.2017
   qualification: (Graphics)
   description: >
-    Foveated Rendering
-    Octahedron Rendering
+    Developed the Foveated Rendering for mobiles. <br>
+    -	Ported the Eye tracking solution of SMI.<br>
+    -	Implemented the 2 layer by using stencil to focus on the gazing point.<br>
+    -	Added the shader(GLSL,HLSL) to blend with each layers.<br>
+    <br>
+    Participated in the project called ‘Octahedron projection’ which makes the efficient VR rendering solution for Samsung VR<br>
+    -	Implemented the shader (GLSL) to blend each face of Octahedron.
 
 - name: OnCircle App.
   dates: May.2015 - Apr.2016
   qualification: (Android)
   description: >
-    Circle UI communicator. 
-    Their own communication 
+    Circle UI communicator for Galaxy S6 (Edge type). <br>
+    -	Developed various type of messages (AGIF, Emoticon, Touch and Drag), animation UI
+
 
 - name: Kids Mode in Galaxy
   dates: May.2014 ~ Apr.2015
   qualification: (Android)
   description: >
-    Managing to deploy kids Apps in Samsung apps<br>
-    Development Kids UI, Parental Control UI
+    Managed life cycle of the native applications for kids in Galaxy Store.<br>
+    Developed animated UI of Parental Control, Kids Camera, Kids Voice Recorder and etc.
+
 
 - name: ETC apps
   dates: Feb.2011 ~ Apr.2013
   qualification: (Android)
   description: >
-    Managing 3rd party apps, Maintain release Tablet projects, Quick panel, Video player
-
+    Managed 3rd party apps, Maintain releases of Tablet products, Quick panel, Video player
 
 
