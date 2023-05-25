@@ -224,8 +224,8 @@ __double underscores__
 ![Alt text](/path/to/img.jpg)
 ![Alt text](/path/to/img.jpg "Optional title")
 ```
-![석촌호수 러버덕 이미지](../assets/posting_img/test/RubberDuck.jpg)
-![석촌호수 러버덕 이미지](../assets/posting_img/test/RubberDuck.jpg "RubberDuck")
+![석촌호수 러버덕 이미지](../Site/assets/posting_img/test/RubberDuck.jpg)
+![석촌호수 러버덕 이미지](../Site/assets/posting_img/test/RubberDuck.jpg "RubberDuck")
 
 사이즈 조절 기능은 없기 때문에 ```<img width="" height=""></img>```를 이용한다.
 

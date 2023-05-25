@@ -1,13 +1,13 @@
 # Site
-name:               Jae-eun Yang
+name:               Jalen Yang
 title:              Graphics SW Engineer
 bio:                '3D Graphics Developer<br>Android & Unreal & Unity'
 description:        ""
 reading_time:       true
 words_per_minute:   200
-logo:               "assets/profile/sydney_with_son.jpg"
-background:         'assets/img/placeholder-big.jpg'
-icon:               'assets/img/favicons/apple-icon-72x72.png'
+logo:               "Site/assets/profile/sydney_with_son.jpg"
+background:         'Site/assets/img/placeholder-big.jpg'
+icon:               'Site/assets/img/favicons/apple-icon-72x72.png'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                https://jaeeun.github.io
@@ -63,7 +63,7 @@ instagram:         "yangtkboy"
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
-phone:              "+82-10-5445-3499"
+phone:              "+1-437-214-1185"
 website:            "jaeeun.github.io"
 
 # Gems

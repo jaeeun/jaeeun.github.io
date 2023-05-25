@@ -4,6 +4,7 @@ title : "GLTF Study"
 data : 2022-04-28
 tag:
 - Graphics
+- GLTF
 comments: true
 img : "https://kcoley.github.io/glTF/specification/figures/gltf.png"
 ---
