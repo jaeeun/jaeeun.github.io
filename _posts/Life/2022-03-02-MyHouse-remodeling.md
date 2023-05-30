@@ -5,7 +5,7 @@ tag:
 - Life
 - Unreal Engine
 comments: true
-img : "../assets/posting_img/jaeeun_home/sketchup_thumbnail.png"
+img : "/Site/assets/posting_img/jaeeun_home/sketchup_thumbnail.png"
 ---
 
 # SketchUp for Remodeling

@@ -13,5 +13,8 @@ comments: false
 * Graphics solution
 * Android
 
-      
+
+<a class="btn zoombtn" href="{{ site.url }}/Site/resume/">Resume</a>
+
+
 [Jaeeun's Indivisual Repo.](https://github.com/jaeeun){: .btn}

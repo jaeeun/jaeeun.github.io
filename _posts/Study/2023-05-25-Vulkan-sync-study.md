@@ -2,7 +2,7 @@
 title : "Vulkan Syncronization"
 data : 2023-05-25
 tag : 
- - Tips
+ - Study
  - Vulkan
 comments : true
 img : "https://developer.nvidia.com/sites/default/files/Vulkan_Logo.png"

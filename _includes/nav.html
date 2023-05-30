@@ -11,8 +11,11 @@
 						<p>{{ site.description }}</p>
 					</li>
 					<li><a href="{{ site.url }}/Site/about/"><span class="btn btn-inverse">Read More</span></a></li>
+
+					<li><a href="{{ site.url }}/Site/resume/"><span class="btn btn-inverse">Resume</span></a></li>
+
 					{% if site.email %}<li>
-                        <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+                        <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> yangtkboy@gmail.com</a>
                     </li>{% endif %}
                     {% if site.twitter %}<li>
                         <a href="http://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
@@ -90,20 +93,29 @@
 				<ul class="dl-submenu">
 					<li><a href="{{ site.url }}/Site/posts/">All Posts</a></li>
 					<li><a href="{{ site.url }}/Site/tags/">All Tags</a></li>
-					<li><a href="{{ site.url }}/Site/">Life</a></li>
-					<li><a href="{{ site.url }}/Site/">Dev Tips</a></li>
-					<li><a href="{{ site.url }}/Site/">Graphics</a></li>
-					<li><a href="{{ site.url }}/Site/">ML</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Life">Tag : Life</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Tips/">Tag : Dev Tips</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Graphics">Tag : Graphics</a></li>
+					<li><a href="{{ site.url }}/Site/posts/ML">Tag : ML</a></li>
 				</ul>
 			</li>
-            <li><a href="{{ site.url }}/Site/resume/">Resume</a></li>
+            
 			{% for link in site.data.navigation %}
 		    {% if link.url contains 'http' %}
 		        {% assign domain = '' %}
 		        {% else %}
 		        {% assign domain = site.url %}
 		    {% endif %}
-		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
+		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
+                <ul class="dl-submenu">
+					<li><a href="{{ site.url }}/Site/posts/">All Posts</a></li>
+					<li><a href="{{ site.url }}/Site/tags/">All Tags</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Life">Tag : Life</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Tips/">Tag : Dev Tips</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Graphics">Tag : Graphics</a></li>
+					<li><a href="{{ site.url }}/Site/posts/ML">Tag : ML</a></li>
+				</ul>
+            </li>
 		  {% endfor %}
 		</ul><!-- /.dl-menu -->
 	</nav><!-- /.dl-menuwrapper -->
