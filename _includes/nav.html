@@ -108,12 +108,10 @@
 		    {% endif %}
 		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a>
                 <ul class="dl-submenu">
-					<li><a href="{{ site.url }}/Site/posts/">All Posts</a></li>
-					<li><a href="{{ site.url }}/Site/tags/">All Tags</a></li>
-					<li><a href="{{ site.url }}/Site/posts/Life">Tag : Life</a></li>
-					<li><a href="{{ site.url }}/Site/posts/Tips/">Tag : Dev Tips</a></li>
-					<li><a href="{{ site.url }}/Site/posts/Graphics">Tag : Graphics</a></li>
-					<li><a href="{{ site.url }}/Site/posts/ML">Tag : ML</a></li>
+					<li><a href="{{ site.url }}/Site/projects/">All Projects</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Project Android">Project : Android</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Project Graphics/">Project : Graphics</a></li>
+					<li><a href="{{ site.url }}/Site/posts/Project Unreal">Project : Unreal</a></li>
 				</ul>
             </li>
 		  {% endfor %}

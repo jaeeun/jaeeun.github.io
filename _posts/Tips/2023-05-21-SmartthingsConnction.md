@@ -1,5 +1,5 @@
 ---
-title : ""
+title : "Tips of connecting Smart things"
 data : 2023-05-21
 tag : 
  - Tips
@@ -9,7 +9,7 @@ comments : true
 img : "https://www.lifewire.com/thmb/WkZEv4Rf1_yGdNsn1yoIwh5Q828=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/samsung-smart-tv-with-smartthings-5c44b7f646e0fb0001454468.jpg"
 ---
 
-# Smartthings 연결 방법 (Rest api v1 사용방법)
+## Smartthings 연결 방법 (Rest api v1 사용방법)
 
 ## <참고 페이지>
 

@@ -1,5 +1,5 @@
 ---
-title : "VOCA 분석 (Auto Facial Animation)"
+title : "VOCA analisys (Auto Facial Animation)"
 data : 2023-05-15
 tag : 
  - ML
