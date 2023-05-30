@@ -22,6 +22,28 @@ layout: compress
                     </a>
                 </div>
 
+                <h3 class="content">
+                    Frequently Tags
+                </h3>
+
+                <ul class="entry-meta inline-list">
+                    {% assign this_word = "Life" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    {% assign this_word = "Graphics" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    {% assign this_word = "Unreal" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    {% assign this_word = "ML" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    {% assign this_word = "Study" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    {% assign this_word = "Tips" %}
+                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    
+                    <li><a href="{{ site.url }}/Site/tags" class="tag"><span class="term">All Tags</span> </a></li>
+                </ul>
+
+
                 <div class="post-list">
                     {% for post in site.posts %} 
                         {% if post.project == null %}
