@@ -3,6 +3,7 @@ title : "Graphics Pipeline"
 data : 2023-05-10
 tag : 
  - Graphics
+ - Study
 comments : true
 img : "https://www.researchgate.net/profile/Christoph-Guetter/publication/235696712/figure/fig1/AS:299742132228097@1448475501091/The-graphics-pipeline-in-OpenGL-consists-of-these-5-steps-in-the-new-generation-of-cards.png"
 ---

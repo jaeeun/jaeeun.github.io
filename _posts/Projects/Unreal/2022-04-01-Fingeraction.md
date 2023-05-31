@@ -8,5 +8,8 @@ comments : true
 img : ""
 ---
 
+![](/Site/assets/posting_img/Projects/fingeraction.png)
+
+
 ## Fingeraction
 : Through the Finger guesture, controlling 3D Avatar animations

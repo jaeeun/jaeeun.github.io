@@ -8,4 +8,4 @@ comments : true
 img : ""
 ---
 
-
+![](/Site/assets/posting_img/Projects/FoveatedRendering.png)

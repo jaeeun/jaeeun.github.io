@@ -4,6 +4,7 @@ title : "Transform Matrix to Euler"
 data : 2022-04-28
 tag:
 - Graphics
+- Study
 comments: true
 img : "http://upload.wikimedia.org/math/9/d/3/9d3a5ff0a89abaf2f3bccc9341476f4b.png"
 ---
