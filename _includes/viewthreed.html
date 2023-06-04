@@ -1,0 +1,102 @@
+<canvas id="canvas" width="300" height="300"> </canvas>
+
+<script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js",
+                "GUI" : "https://unpkg.com/three@0.141.0/examples/jsm/libs/lil-gui.module.min.js",
+                "OrbitControls" : "https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+
+<script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'GLTFLoader';
+    import { GUI } from 'GUI';
+
+    let container, stats, clock, gui, mixer, actions, activeAction, previousAction, face;
+    let model;
+
+    container = document.createElement('div');
+    document.body.appendChild(container);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera( 45, 1, 1, 80000 );
+				camera.position.set( 0, 0, 300 );
+
+    const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector('#canvas'),
+        antialias: true
+    });
+
+    scene.background = new THREE.Color('white');
+
+    renderer.outputEncoding - THREE.sRGBEncoding;
+
+    const dirLight1 = new THREE.DirectionalLight(0xffddcc, 1);
+    dirLight1.position.set(1, 0.75, 0.5);
+    scene.add(dirLight1);
+
+    const dirLight2 = new THREE.DirectionalLight(0xccccff, 1);
+    dirLight2.position.set(- 1, 0.75, - 0.5);
+    scene.add(dirLight2);
+
+    let light = new THREE.HemisphereLight(0xffffff, 10);
+    scene.add(light);
+
+    render();
+
+
+    function render() {
+        let loader = new GLTFLoader();
+        loader.load('../Site/assets/GLTF/wilson_basketball.glb', function (gltf) {
+
+            model = gltf.scene;
+            scene.add(gltf.scene);
+
+            window.onscroll = function () { myFunction() };
+            var lastScrollTop = 0;
+
+            function myFunction() {
+                var st = window.pageYOffset || document.documentElement.scrollTop;
+                if (st > lastScrollTop) {
+                    model.rotation.x += 0.2;
+                } else if (st < lastScrollTop) {
+                    model.rotation.x -= 0.2;
+                }
+                lastScrollTop = st;
+
+                renderer.render(scene, camera);
+
+            }
+            model.rotation.y=30;
+            renderer.render(scene, camera);
+        });
+    }
+
+
+    function fadeToAction(name, duration) {
+
+        previousAction = activeAction;
+        activeAction = actions[name];
+
+        if (previousAction !== activeAction) {
+
+            previousAction.fadeOut(duration);
+
+        }
+
+        activeAction
+            .reset()
+            .setEffectiveTimeScale(1)
+            .setEffectiveWeight(1)
+            .fadeIn(duration)
+            .play();
+
+    }
+
+
+
+</script>

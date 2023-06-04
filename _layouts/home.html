@@ -5,75 +5,97 @@ layout: compress
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
 <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]-->
+
 <head>
     {% include head.html %}
 </head>
+
 <body>
     {% include nav.html %}
     <!-- Header -->
     <header class="header flex" role="banner">
-        <div class="container animated fadeIn">
+        <!-- <div class="container animated fadeIn"> -->
+        <div class="wrapper animated fadeIn">
             <div class="row">
-                    <a href="{{ site.url }}">
-                        <img src="{{ site.logo }}" class="img-circle zoombtn animated rotateIn">
-                    </a>
-                    <h3 class="title">
-                        <a class="zoombtn" href="{{ site.url }}">
-                            <p style="font-size:1.2rem;font-weight:300">
+                <a href="{{ site.url }}">
+                    <img src="{{ site.logo }}" class="img-circle zoombtn animated rotateIn">
+                </a>
+                
+                <h3 class="title">
+                    <a class="zoombtn" href="{{ site.url }}">
+                        <p style="font-size:1.2rem;font-weight:300">
                             <img src="{{ site.icon }}"> {{ site.name }}
-                            </p>
-			            </a>
-                    </h3>
-                    <hr class="hr-line">
-                    <h3 class="title">
-                        <a href="{{ site.url }}">
-                        	<p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
-			            </a>
-                    </h3>
-                    {% include social-links.html %}
+                        </p>
+                    </a>
+                </h3>
+                
+                <h3 class="title">
+                    <a href="{{ site.url }}">
+                        <p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
+                    </a>
+                </h3>
+
+                {% include social-links.html %}
 
 
-                  <br>
-                  <hr class="hr-line">
-                  
+                <br>
+                <hr class="hr-line">
+
+                {% include viewthreed.html %}
+      
+                <ul class="entry-meta inline-list">
+                <li><a href="{{ site.url }}/Site/posts/Toys" class="tag"><span class="term">Another Toys</span></a></li>
+                </ul>
+
+                <br>
 
 
-                  <h3 class="title">
-                         <a class="btn zoombtn" href="{{ site.url }}/Site/about">
-                         About
-                         </a>
-                         <a class="btn zoombtn" href="{{ site.url }}/Site/tags">
-                         All Tags
-                         </a>
-                         <a class="btn zoombtn" href="{{ site.url }}/Site/posts">
-                         Posts
-                         </a>
-                         <a class="btn zoombtn" href="{{ site.url }}/Site/projects">
-                         Projects
-                         </a>
-                 </h3>
+                
 
 
-                 <br><br>
-                 <hr class="hr-line">
+                <h3 class="title">
+                    <a class="btn zoombtn" href="{{ site.url }}/Site/about">
+                        About
+                    </a>
+                    <a class="btn zoombtn" href="{{ site.url }}/Site/tags">
+                        All Tags
+                    </a>
+                    <a class="btn zoombtn" href="{{ site.url }}/Site/posts">
+                        Posts
+                    </a>
+                    <a class="btn zoombtn" href="{{ site.url }}/Site/projects">
+                        Projects
+                    </a>
+                    
+                </h3>
+
+                <br><br>
+                <hr class="hr-line">
                 <h3 class="title">
                     Frequently Tags
                 </h3>
 
                 <ul class="entry-meta inline-list">
                     {% assign this_word = "Life" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                     {% assign this_word = "Graphics" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                     {% assign this_word = "Unreal" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                     {% assign this_word = "ML" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                     {% assign this_word = "Study" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                     {% assign this_word = "Tips" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span
+                                class="count">{{ site.tags[this_word].size }}</span></a></li>
                 </ul>
 
 
@@ -85,16 +107,24 @@ layout: compress
 
                 <ul class="entry-meta inline-list">
                     {% assign this_word = "Project Android" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2011~2016</span><span class="term">Android Applications</span> </a></li><br>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2011~2016</span><span
+                                class="term">Android Applications</span> </a></li><br>
                     {% assign this_word = "Project Graphics" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2016~2019</span><span class="term">Graphics Solutions</span> </a></li><br>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2016~2019</span><span
+                                class="term">Graphics Solutions</span> </a></li><br>
                     {% assign this_word = "Project Unreal" %}
-                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2019~2022</span><span class="term">Unreal Simulations</span> </a></li><br>
+                    <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2019~2022</span><span
+                                class="term">Unreal Simulations</span> </a></li><br>
                 </ul>
-                        
+
+
+
             </div>
         </div>
     </header>
     {% include scripts.html %}
+
+
 </body>
+
 </html>
