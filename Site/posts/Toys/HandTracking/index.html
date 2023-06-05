@@ -1,0 +1,105 @@
+---
+layout : compress
+title : Hand Tracking
+---
+
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    {% include head.html %}
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include nav.html %}
+
+    <header class="header" role="banner">
+        <!-- <div class="wrapper animated fadeIn"> -->
+        <div class="content">
+            <div class="post-title {% if page.feature %} feature {% endif %}">
+                <h1>{{ page.title }}</h1>
+
+                <a class="btn zoombtn" onClick="history.go(-1)">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            </div>
+
+            <div style="text-align:center">
+                <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+            </div>
+            <div style="position:absolute; bottom:50px; left:50px">
+                <video class="input_video" width="256px" height="144px"></video>
+            </div>
+
+            <style>
+                .input_video {
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                    opacity: 0.5;
+                }
+
+                .output_canvas {
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                }
+            </style>
+
+            <script type="module">
+                const videoElement = document.getElementsByClassName('input_video')[0];
+                const canvasElement = document.getElementsByClassName('output_canvas')[0];
+                const canvasCtx = canvasElement.getContext('2d');
+
+                canvasCtx.fillStyle = "gray";
+                canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+                function onResults(results) {
+                    canvasCtx.save();
+                    canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+                    canvasCtx.fillStyle = "gray";
+                    canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+                    if (results.multiHandLandmarks) {
+                        for (const landmarks of results.multiHandLandmarks) {
+                            drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+                                { color: '#00FF00', lineWidth: 5 });
+                            drawLandmarks(canvasCtx, landmarks, { color: '#FF0000', lineWidth: 2 });
+                        }
+                    }
+
+                    canvasCtx.restore();
+                }
+
+                const hands = new Hands({
+                    locateFile: (file) => {
+                        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+                    }
+                });
+                hands.setOptions({
+                    maxNumHands: 2,
+                    modelComplexity: 1,
+                    minDetectionConfidence: 0.5,
+                    minTrackingConfidence: 0.5
+                });
+                hands.onResults(onResults);
+
+                const camera = new Camera(videoElement, {
+                    onFrame: async () => {
+                        await hands.send({ image: videoElement });
+                    },
+                    width: 1280,
+                    height: 720
+                });
+                camera.start();
+            </script>
+            <!-- </div> -->
+        </div>
+    </header>
+</body>
+
+</html>
