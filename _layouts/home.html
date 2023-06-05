@@ -22,7 +22,7 @@ layout: compress
                 <a href="{{ site.url }}/Site/about">
                     <img src="{{ site.logo }}" class="img-circle zoombtn animated rotateIn">
                 </a>
-                
+
                 <h3 class="title">
                     <a class="zoombtn" href="{{ site.url }}/Site/about">
                         <p style="font-size:1.2rem;font-weight:300">
@@ -30,7 +30,7 @@ layout: compress
                         </p>
                     </a>
                 </h3>
-                
+
                 <h3 class="title">
                     <a href="{{ site.url }}">
                         <p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
@@ -43,33 +43,49 @@ layout: compress
                 <br>
                 <hr class="hr-line">
 
-                {% include viewthreed.html %}
-      
+                <h3 class="title">
+                    3D Toy
+                </h3>
+
+                <script type="importmap">
+                    {
+                        "imports": {
+                            "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                            "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js",
+                            "GUI" : "https://unpkg.com/three@0.141.0/examples/jsm/libs/lil-gui.module.min.js",
+                            "OrbitControls" : "https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js",
+                            "three/addons/": "https://unpkg.com/three@0.141.0/examples/jsm/"
+                        }
+                    }
+                </script>
+
+                {% include threed-ball.html %}
+
                 <ul class="entry-meta inline-list">
-                <li><a href="{{ site.url }}/Site/posts/Toys" class="tag"><span class="term">Another 3D Toys</span></a></li>
+
+                    <a href="{{ site.url }}/Site/posts/Toys" class="btn zoombtn"><span class="term">Another 3D
+                                Toys</span></a>
                 </ul>
 
                 <br>
-
+                <hr class="hr-line">
 
                 <h3 class="title">
+                    <a>My Blog</a>
+                    <img src="/Site/assets/img/ukulele.jpg" 
+                    width="240px" height="135px"/>
+                    <br>
                     <a class="btn zoombtn" href="{{ site.url }}/Site/tags">
                         All Tags
                     </a>
                     <a class="btn zoombtn" href="{{ site.url }}/Site/posts">
-                        Posts
+                        All Posts
                     </a>
-                    <a class="btn zoombtn" href="{{ site.url }}/Site/projects">
-                        Projects
-                    </a>
-                    
-                </h3>
 
-                <br><br>
-                <hr class="hr-line">
-                <h3 class="title">
-                    Frequently Tags
+
                 </h3>
+                <br>
+                <p style="font-size:1rem;font-weight:300">Frequent Tags</p>
 
                 <ul class="entry-meta inline-list">
                     {% assign this_word = "Life" %}
@@ -92,13 +108,20 @@ layout: compress
                                 class="count">{{ site.tags[this_word].size }}</span></a></li>
                 </ul>
 
-
-
-                <br>
+                <br><br>
+                <hr class="hr-line">
+           
                 <h3 class="title">
-                    Professional Experiences
+                    Work Experiences
+                    <br>    
                 </h3>
 
+                {% include threed-mixamo.html %}
+
+                
+                <a class="btn zoombtn" href="{{ site.url }}/Site/projects">
+                    All Projects
+                </a>
                 <ul class="entry-meta inline-list">
                     {% assign this_word = "Project Android" %}
                     <li><a href="Site/posts/{{ this_word }}" class="tag"><span class="count">2011~2016</span><span
@@ -117,6 +140,7 @@ layout: compress
         </div>
     </header>
     {% include scripts.html %}
+
 
 
 </body>

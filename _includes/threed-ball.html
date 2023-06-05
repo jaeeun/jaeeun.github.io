@@ -1,15 +1,4 @@
-<canvas id="canvas" width="300" height="300"> </canvas>
-
-<script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
-                "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js",
-                "GUI" : "https://unpkg.com/three@0.141.0/examples/jsm/libs/lil-gui.module.min.js",
-                "OrbitControls" : "https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js"
-            }
-        }
-    </script>
+<canvas id="canvas" width="240" height="240"> </canvas>
 
 <script type="module">
     import * as THREE from 'three';
@@ -24,7 +13,7 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera( 45, 1, 1, 80000 );
-				camera.position.set( 0, 0, 300 );
+	camera.position.set( 0, 0, 250 );
 
     const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector('#canvas'),

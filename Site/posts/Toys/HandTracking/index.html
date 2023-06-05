@@ -90,6 +90,7 @@ title : Hand Tracking
                     canvasCtx2.fillRect(0, 0, canvasElement2.width, canvasElement2.height);
                     if (results.multiHandLandmarks) {
                         for (const landmarks of results.multiHandLandmarks) {
+                            console.log(landmarks);
                             drawConnectors(canvasCtx2, landmarks, HAND_CONNECTIONS,
                                 { color: '#0000FF', lineWidth: 5 });
                         }

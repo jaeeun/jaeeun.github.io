@@ -1,0 +1,302 @@
+<div id="container"></div>
+<canvas id="can" width="350" height="250"> </canvas>
+
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+
+<script type="module">
+
+    import * as THREE from 'three';
+
+    import Stats from 'three/addons/libs/stats.module.js';
+    import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+    let scene, renderer, camera, stats;
+    let model, skeleton, mixer, clock;
+
+    const crossFadeControls = [];
+
+    let currentBaseAction = 'idle';
+    const allActions = [];
+    const baseActions = {
+        idle: { weight: 1 },
+        walk: { weight: 0 },
+        run: { weight: 0 }
+    };
+    const additiveActions = {
+        sneak_pose: { weight: 0 },
+        sad_pose: { weight: 0 },
+        agree: { weight: 0 },
+        headShake: { weight: 0 }
+    };
+    let panelSettings, numAnimations;
+
+    init();
+
+    function init() {
+
+        const container = document.getElementById('container');
+        clock = new THREE.Clock();
+
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xffffff);
+
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x8d8d8d);
+        hemiLight.position.set(0, 20, 0);
+        scene.add(hemiLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff);
+        dirLight.position.set(3, 10, 10);
+        dirLight.castShadow = true;
+        dirLight.shadow.camera.top = 2;
+        dirLight.shadow.camera.bottom = - 2;
+        dirLight.shadow.camera.left = - 2;
+        dirLight.shadow.camera.right = 2;
+        dirLight.shadow.camera.near = 0.1;
+        dirLight.shadow.camera.far = 40;
+        scene.add(dirLight);
+
+
+        const mesh = new THREE.Mesh(new THREE.PlaneGeometry(100, 100), new THREE.MeshPhongMaterial({ color: 0xcbcbcb, depthWrite: false }));
+        mesh.rotation.x = - Math.PI / 2;
+        mesh.receiveShadow = true;
+        scene.add(mesh);
+
+        const loader = new GLTFLoader();
+        loader.load('../Site/assets/GLTF/Xbot.glb', function (gltf) {
+
+            model = gltf.scene;
+            scene.add(model);
+
+            model.traverse(function (object) {
+
+                if (object.isMesh) object.castShadow = true;
+
+            });
+
+            model.rotation.y=100;
+            skeleton = new THREE.SkeletonHelper(model);
+            skeleton.visible = false;
+            scene.add(skeleton);
+
+            const animations = gltf.animations;
+            mixer = new THREE.AnimationMixer(model);
+
+            numAnimations = animations.length;
+
+            for (let i = 0; i !== numAnimations; ++i) {
+
+                let clip = animations[i];
+                const name = clip.name;
+
+                if (baseActions[name]) {
+
+                    const action = mixer.clipAction(clip);
+                    activateAction(action);
+                    baseActions[name].action = action;
+                    allActions.push(action);
+
+                } else if (additiveActions[name]) {
+
+                    THREE.AnimationUtils.makeClipAdditive(clip);
+
+                    if (clip.name.endsWith('_pose')) {
+
+                        clip = THREE.AnimationUtils.subclip(clip, clip.name, 2, 3, 30);
+
+                    }
+
+                    const action = mixer.clipAction(clip);
+                    activateAction(action);
+                    additiveActions[name].action = action;
+                    allActions.push(action);
+
+                }
+
+            }
+
+
+            animate();
+
+            executeCrossFade(baseActions['idle'].action, baseActions['run'].action, 0.35);
+        });
+
+        renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector('#can'),
+            antialias: true
+        });
+        renderer.shadowMap.enabled = true;
+        container.appendChild(renderer.domElement);
+        camera = new THREE.PerspectiveCamera( 30, 7/5, 1, 8000 );
+	    camera.position.set( 0, 1, 4 );
+
+
+
+        stats = new Stats();
+        container.appendChild(stats.dom);
+
+        window.addEventListener('resize', onWindowResize);
+
+        let isRun=false;
+        const el = document.getElementById("can");
+        el.addEventListener('mousedown', function(e){
+            console.log("event start");
+            if(isRun){
+                isRun=false;
+                executeCrossFade(baseActions['idle'].action, baseActions['run'].action, 0.35);
+            }else{
+                isRun=true;
+                executeCrossFade(baseActions['run'].action, baseActions['idle'].action, 0.35);
+            }
+        }, false);
+
+
+        
+    }
+
+
+    function activateAction(action) {
+
+        const clip = action.getClip();
+        const settings = baseActions[clip.name] || additiveActions[clip.name];
+        setWeight(action, settings.weight);
+        action.play();
+
+    }
+
+    function modifyTimeScale(speed) {
+
+        mixer.timeScale = speed;
+
+    }
+
+    function prepareCrossFade(startAction, endAction, duration) {
+
+
+        if (currentBaseAction === 'idle' || !startAction || !endAction) {
+
+            executeCrossFade(startAction, endAction, duration);
+
+        } else {
+
+            synchronizeCrossFade(startAction, endAction, duration);
+
+        }
+
+        if (endAction) {
+
+            const clip = endAction.getClip();
+            currentBaseAction = clip.name;
+
+        } else {
+
+            currentBaseAction = 'None';
+
+        }
+
+        crossFadeControls.forEach(function (control) {
+
+            const name = control.property;
+
+            if (name === currentBaseAction) {
+
+                control.setActive();
+
+            } else {
+
+                control.setInactive();
+
+            }
+
+        });
+
+    }
+
+    function synchronizeCrossFade(startAction, endAction, duration) {
+
+        mixer.addEventListener('loop', onLoopFinished);
+
+        function onLoopFinished(event) {
+
+            if (event.action === startAction) {
+
+                mixer.removeEventListener('loop', onLoopFinished);
+
+                executeCrossFade(startAction, endAction, duration);
+
+            }
+
+        }
+
+    }
+
+    function executeCrossFade(startAction, endAction, duration) {
+
+        if (endAction) {
+
+            setWeight(endAction, 1);
+            endAction.time = 0;
+
+            if (startAction) {
+
+
+                startAction.crossFadeTo(endAction, duration, true);
+
+            } else {
+
+
+                endAction.fadeIn(duration);
+
+            }
+
+        } else {
+
+            startAction.fadeOut(duration);
+
+        }
+
+    }
+    function setWeight(action, weight) {
+
+        action.enabled = true;
+        action.setEffectiveTimeScale(1);
+        action.setEffectiveWeight(weight);
+
+    }
+
+    function onWindowResize() {
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+    }
+
+    function animate() {
+
+
+        requestAnimationFrame(animate);
+
+        for (let i = 0; i !== numAnimations; ++i) {
+
+            const action = allActions[i];
+            const clip = action.getClip();
+            const settings = baseActions[clip.name] || additiveActions[clip.name];
+            settings.weight = action.getEffectiveWeight();
+            
+        }
+
+        const mixerUpdateDelta = clock.getDelta();
+
+        mixer.update(mixerUpdateDelta);
+
+        stats.update();
+
+        renderer.render(scene, camera);
+
+    }
+
+</script>
