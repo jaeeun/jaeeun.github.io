@@ -1,4 +1,4 @@
-<div id="container"></div>
+
 <canvas id="can" width="350" height="250"> </canvas>
 
 <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
@@ -127,15 +127,9 @@
             canvas: document.querySelector('#can'),
             antialias: true
         });
-        renderer.shadowMap.enabled = true;
-        container.appendChild(renderer.domElement);
         camera = new THREE.PerspectiveCamera( 30, 7/5, 1, 8000 );
 	    camera.position.set( 0, 1, 4 );
 
-
-
-        stats = new Stats();
-        container.appendChild(stats.dom);
 
         window.addEventListener('resize', onWindowResize);
 
@@ -292,9 +286,7 @@
         const mixerUpdateDelta = clock.getDelta();
 
         mixer.update(mixerUpdateDelta);
-
-        stats.update();
-
+        
         renderer.render(scene, camera);
 
     }
