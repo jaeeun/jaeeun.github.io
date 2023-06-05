@@ -37,6 +37,9 @@ title : Hand Tracking
             <div style="position:absolute; bottom:50px; left:50px">
                 <video class="input_video" width="256px" height="144px"></video>
             </div>
+            <div style="position:absolute; bottom:50px; left:50px">
+                <canvas class="output_canvas2" width="256px" height="144px"></canvas>
+            </div>
 
             <style>
                 .input_video {
@@ -44,10 +47,14 @@ title : Hand Tracking
                     transform: scaleX(-1);
                     opacity: 0.5;
                 }
-
                 .output_canvas {
                     -webkit-transform: scaleX(-1);
                     transform: scaleX(-1);
+                }
+                .output_canvas2 {
+                    -webkit-transform: scaleX(-1);
+                    transform: scaleX(-1);
+                    opacity: 0.5;
                 }
             </style>
 
@@ -55,9 +62,13 @@ title : Hand Tracking
                 const videoElement = document.getElementsByClassName('input_video')[0];
                 const canvasElement = document.getElementsByClassName('output_canvas')[0];
                 const canvasCtx = canvasElement.getContext('2d');
+                const canvasElement2 = document.getElementsByClassName('output_canvas2')[0];
+                const canvasCtx2 = canvasElement2.getContext('2d');
 
                 canvasCtx.fillStyle = "gray";
                 canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+                canvasCtx2.fillStyle = "black";
+                canvasCtx2.fillRect(0, 0, canvasElement2.width, canvasElement2.height);
 
                 function onResults(results) {
                     canvasCtx.save();
@@ -71,9 +82,22 @@ title : Hand Tracking
                             drawLandmarks(canvasCtx, landmarks, { color: '#FF0000', lineWidth: 2 });
                         }
                     }
-
                     canvasCtx.restore();
+
+                    canvasCtx2.save();
+                    canvasCtx2.clearRect(0, 0, canvasElement2.width, canvasElement2.height);
+                    canvasCtx2.fillStyle = "black";
+                    canvasCtx2.fillRect(0, 0, canvasElement2.width, canvasElement2.height);
+                    if (results.multiHandLandmarks) {
+                        for (const landmarks of results.multiHandLandmarks) {
+                            drawConnectors(canvasCtx2, landmarks, HAND_CONNECTIONS,
+                                { color: '#0000FF', lineWidth: 5 });
+                        }
+                    }
+                    canvasCtx2.restore();
                 }
+
+                
 
                 const hands = new Hands({
                     locateFile: (file) => {
