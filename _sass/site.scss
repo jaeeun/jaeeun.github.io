@@ -135,7 +135,6 @@ body {
 // entry meta
 .entry-meta {
 	@include font-rem(12);
-	text-transform: uppercase;
 	color: lighten($color_tuatara,60);
 	padding-left: 0;
 	a {
@@ -170,7 +169,7 @@ body {
 	}
 }
 header .entry-meta {
-	display: none; // hide header meta on small screens
+	// display: none; // hide header meta on small screens
 	@media #{$notsmall} {
 		display: block;
 	}
