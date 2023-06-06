@@ -131,8 +131,6 @@
 	    camera.position.set( 0, 1, 4 );
 
 
-        window.addEventListener('resize', onWindowResize);
-
         let isRun=false;
         const el = document.getElementById("can");
         el.addEventListener('mousedown', function(e){
@@ -260,14 +258,6 @@
 
     }
 
-    function onWindowResize() {
-
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-    }
 
     function animate() {
 
