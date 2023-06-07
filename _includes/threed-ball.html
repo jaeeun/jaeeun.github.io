@@ -1,4 +1,4 @@
-<canvas id="canvas" width="240" height="240"> </canvas>
+<canvas id="canvas" width="240" height="240" > </canvas>
 
 <script type="module">
     import * as THREE from 'three';
@@ -20,7 +20,7 @@
         antialias: true
     });
 
-    scene.background = new THREE.Color('white');
+    scene.background = new THREE.Color('gray');
 
     renderer.outputEncoding - THREE.sRGBEncoding;
 
@@ -42,6 +42,7 @@
         let loader = new GLTFLoader();
         loader.load('../Site/assets/GLTF/wilson_basketball.glb', function (gltf) {
 
+            scene.background = new THREE.Color('white');
             model = gltf.scene;
             scene.add(gltf.scene);
 
@@ -63,6 +64,7 @@
             model.rotation.y=30;
             renderer.render(scene, camera);
         });
+        renderer.render(scene, camera);
     }
 
 
