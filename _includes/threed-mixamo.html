@@ -129,6 +129,11 @@
         camera = new THREE.PerspectiveCamera( 30, 7/5, 1, 8000 );
 	    camera.position.set( 0, 1, 4 );
 
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enablePan = false;
+        controls.enableZoom = false;
+        controls.target.set(0, 1, 0);
+        controls.update();
 
         let isRun=false;
         const el = document.getElementById("can");
