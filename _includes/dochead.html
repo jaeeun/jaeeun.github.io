@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if title %}{{ title }} — {% endif %}{{ site.name }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="shortcut icon" type="image/png" href="{{ site.url }}/Site/favicon.png">
+<link rel="stylesheet" href="{{ site.url }}/Site/assets/css/home.css">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.name }}{% endif %}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:image" content="{{ site.url }}/{{ about.about_profile_image }}">

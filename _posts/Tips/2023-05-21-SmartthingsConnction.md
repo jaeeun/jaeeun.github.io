@@ -20,10 +20,10 @@ img : "https://www.lifewire.com/thmb/WkZEv4Rf1_yGdNsn1yoIwh5Q828=/750x0/filters:
 [https://developer-preview.smartthings.com/docs/api/public](https://developer-preview.smartthings.com/docs/api/public)
 
 스마트싱스 제품  
-[https://www.samsung.com/sec/smartthings/all-smartthins/](https://www.samsung.com/sec/smartthings/all-smartthins/)
+[https://www.samsung.com/sec/smartthings/all-smartthings/](https://www.samsung.com/sec/smartthings/all-smartthings/)
 
 스마트싱스 ide 사이트  
-[https://graph.api.smartthins.com/](https://graph.api.smartthins.com/)  
+[https://graph.api.smartthings.com/](https://graph.api.smartthings.com/)  
 (나의 디바이스 조회 및 가상 디바이스 추가도 가능)
 
 ## \<REST 테스트 방법\>
@@ -41,7 +41,7 @@ python 코드
 ## \<테스트 순서\>
 
 ### 1. 토큰 발급
-[https://developer-prefiew.smartthings.com/docs/api/public/#section/Authentication-token-types](https://developer-prefiew.smartthings.com/docs/api/public/#section/Authentication-token-types)  
+[https://developer-preview.smartthings.com/docs/api/public/#section/Authentication-token-types](https://developer-preview.smartthings.com/docs/api/public/#section/Authentication-token-types)  
 "personal access tokens page" 눌러서 토큰 발급
 ### 2. Header 작성
 "Authorization: Bearer {token}"
@@ -56,7 +56,7 @@ curl -H "Authorization: Bearer {token}" -X GET https://api.smartthings.com/v1/de
 ```
 
 ### 4. Device의 기능 얻어오기 (GET)
-[https://developer-preview.smartthins.com/docs/api/public/#operation/getDevice](https://developer-preview.smartthins.com/docs/api/public/#operation/getDevice)  
+[https://developer-preview.smartthings.com/docs/api/public/#operation/getDevice](https://developer-preview.smartthings.com/docs/api/public/#operation/getDevice)  
 이 API를 사용하여 Capability가 어떤 것이 있는지 확인한다.
 
 #### 결과 예시 :
@@ -85,7 +85,7 @@ curl -H "Authorization: Bearer {token}" -X GET https://api.smartthings.com/v1/de
 
 #### Curl 예시 :
 ```
-curl -H "Authorization: Bearer {token}" --data '[{"component":"main","capability":"switch","command":"on"}]' -X POST https://api.smartthins.com/v1/devices/{device_id}/commands
+curl -H "Authorization: Bearer {token}" --data '[{"component":"main","capability":"switch","command":"on"}]' -X POST https://api.smartthings.com/v1/devices/{device_id}/commands
 ```
 #### 참고 : 
 

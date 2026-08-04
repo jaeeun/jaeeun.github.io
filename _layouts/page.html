@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en">
 <head>
-    {% include head.html %}
+    {% include dochead.html %}
 </head>
 <body>
-    {% include nav.html %}
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="wrapper">
-            <div class="content">
-                <div class="post-title {% if feature %} feature {% endif %}">
-                    <h1>{{ title }}</h1>
-                    <a class="btn zoombtn" href="{{ site.url }}/">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </div>
+    {% include topnav.html %}
+    <main class="page narrow">
+        <div class="wrap">
+            <a class="backlink" href="{{ site.url }}/">← Home</a>
+            <div class="page-head">
+                <h1>{{ title }}</h1>
+                {% if description %}<p class="sub">{{ description }}</p>{% endif %}
+            </div>
+            <div class="prose">
                 {{ content }}
             </div>
         </div>
-        {% if comments and site.disqus_shortname %}<section id="disqus_thread" class="animated fadeInUp"></section><!-- /#disqus_thread -->{% endif %}
-    </header>
-    {% include scripts.html %}
-    {% if site.mathjax %}
-    <!-- MathJax -->
-    <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    {% endif %}
+    </main>
+    {% include sitefooter.html %}
 </body>
 </html>

@@ -1,122 +1,139 @@
 <!DOCTYPE html>
-<html class="no-js">
-
+<html lang="en">
 <head>
-    {% include head.html %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.name }} — {{ site.title }}</title>
+    <meta name="description" content="{{ site.name }}, {{ site.title }}. 12+ years in Graphics & Android software engineering.">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="shortcut icon" type="image/png" href="{{ site.url }}/Site/favicon.png">
+    <link rel="stylesheet" href="{{ site.url }}/Site/assets/css/home.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site.name }} — {{ site.title }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/{{ about.about_profile_image }}">
 </head>
-
 <body>
-    {% include nav.html %}
-    <!-- Header -->
-    <header class="header flex" role="banner">
-        <div class="wrapper">
-            <div class="row">
-                <a href="{{ site.url }}/Site/about">
-                    <img src="{{ site.url }}/{{ site.logo }}" class="img-circle zoombtn animated rotateIn">
-                </a>
 
-                <h3 class="title">
-                    <a class="zoombtn" href="{{ site.url }}/Site/about">
-                        <p style="font-size:1.2rem;font-weight:300">
-                            <img src="{{ site.url }}/{{ site.icon }}"> {{ site.name }}
-                        </p>
-                    </a>
-                </h3>
+    <!-- ===== Top nav ===== -->
+    {% include topnav.html %}
 
-                <h3 class="title">
-                    <a href="{{ site.url }}/">
-                        <p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
-                    </a>
-                </h3>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+        <div class="wrap hero-inner">
+            <div class="hero-text">
+                <span class="eyebrow">Graphics &amp; Android Engineer</span>
+                <h1>Hi, I'm Jalen<span class="grad-text"> Yang</span></h1>
+                <p class="hero-role">Staff Software Engineer · 12+ years shipping real-time graphics, avatar animation, and Android apps.</p>
+                <p class="hero-tagline">I build renderers, simulations, and mobile software — from OpenGL and Unreal Engine to native Android and applied ML.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="{{ site.url }}/Site/resume/">View Resume</a>
+                    <a class="btn btn-ghost" href="#projects">See Projects</a>
+                </div>
+                <div class="socials">
+                    {% if site.email %}<a href="mailto:{{ site.email }}" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg></a>{% endif %}
+                    {% if site.github_url %}<a href="https://github.com/{{ site.github_url }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7 1 .7 2v3c0 .3.2.6.7.5 3.9-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2Z"/></svg></a>{% endif %}
+                    {% if site.linkedin %}<a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 3H3.6C3 3 3 3 3 3.6v16.8c0 .6 0 .6.6.6h16.8c.6 0 .6 0 .6-.6V3.6c0-.6 0-.6-.6-.6ZM8.3 18.3H5.6V9.7h2.7v8.6ZM7 8.5a1.6 1.6 0 1 1 0-3.1 1.6 1.6 0 0 1 0 3.1Zm11.3 9.8h-2.7v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.3h-2.7V9.7h2.6v1.2h.1c.4-.7 1.3-1.4 2.6-1.4 2.7 0 3.2 1.8 3.2 4.2v4.6Z"/></svg></a>{% endif %}
+                    {% if site.instagram %}<a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>{% endif %}
+                </div>
+            </div>
+            <img class="hero-avatar" src="{{ site.url }}/{{ about.about_profile_image }}" alt="{{ site.name }}">
+        </div>
+    </section>
 
-                {% include social-links.html %}
-
-
-                <br>
-                <hr class="hr-line">
-
-                <h3 class="title">
-                    3D Toy
-                </h3>
-
-                <script type="importmap">
-                    {
-                        "imports": {
-                            "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
-                            "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js",
-                            "GUI" : "https://unpkg.com/three@0.141.0/examples/jsm/libs/lil-gui.module.min.js",
-                            "OrbitControls" : "https://unpkg.com/three@0.141.0/examples/jsm/controls/OrbitControls.js",
-                            "three/addons/": "https://unpkg.com/three@0.141.0/examples/jsm/"
-                        }
-                    }
-                </script>
-
-                {% include threed-ball.html %}
-
-                <ul class="title">
-                    <a href="{{ site.url }}/Site/posts/Toys" class="btn zoombtn">Another 3D Toys</a>
-                </ul>
-
-                <br>
-                <hr class="hr-line">
-
-                <h3 class="title">
-                    <a>My Blog</a>
-                    <img src="{{ site.url }}/Site/assets/img/ukulele.jpg" width="240px" height="135px"/>
-                    <br>
-                    <a class="btn zoombtn" href="{{ site.url }}/Site/tags">
-                        All Tags
-                    </a>
-                    <a class="btn zoombtn" href="{{ site.url }}/Site/posts">
-                        All Posts
-                    </a>
-                </h3>
-                <br>
-                <p style="font-size:1rem;font-weight:300">Frequent Tags</p>
-
-                <ul class="entry-meta">
-                    {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
-                    {% for this_word in tag_words %}
-                    <a href="{{ site.url }}/Site/posts/{{ this_word }}" class="tag">
-                        <span class="term">{{ this_word }}</span>
-                        <span class="count">{{ collections.post | filterByTag: this_word | size }}</span>
-                    </a>
-                    {% endfor %}
-                </ul>
-
-                <br><br>
-                <hr class="hr-line">
-
-                <h3 class="title">
-                    Work Experiences
-                    <br>
-                </h3>
-
-                {% include threed-mixamo.html %}
-
-                <br>
-                <a class="btn zoombtn" href="{{ site.url }}/Site/projects">
-                    All Projects
-                </a>
-                <ul class="entry-meta inline-list">
-                    <a href="{{ site.url }}/Site/posts/Project Android" class="tag">
-                        <span class="count">2011~2016</span>
-                        <span class="term">Android Applications</span>
-                    </a><br>
-                    <a href="{{ site.url }}/Site/posts/Project Graphics" class="tag">
-                        <span class="count">2016~2019</span>
-                        <span class="term">Graphics Solutions</span>
-                    </a><br>
-                    <a href="{{ site.url }}/Site/posts/Project Unreal" class="tag">
-                        <span class="count">2019~2022</span>
-                        <span class="term">Unreal Simulations</span>
-                    </a><br>
-                </ul>
-
+    <!-- ===== About ===== -->
+    <section class="section" id="about">
+        <div class="wrap">
+            <p class="kicker">About</p>
+            <h2>Engineering across graphics, mobile &amp; ML</h2>
+            <p class="lead">Seeking a role where I can apply 12 years of experience in Graphics and Android — building rendering pipelines, avatar animation systems, and consumer applications — while continuing to grow into new domains. Korean (native), English (intermediate).</p>
+            <div class="stats reveal">
+                <div class="stat"><div class="stat-num grad-text">12+</div><div class="stat-label">Years experience</div></div>
+                <div class="stat"><div class="stat-num grad-text">4</div><div class="stat-label">US Patents</div></div>
+                <div class="stat"><div class="stat-num grad-text">{{ projects | size }}</div><div class="stat-label">Projects shipped</div></div>
+                <div class="stat"><div class="stat-num grad-text">2×</div><div class="stat-label">CES showcases</div></div>
             </div>
         </div>
-    </header>
-    {% include scripts.html %}
-</body>
+    </section>
 
+    <!-- ===== Skills ===== -->
+    <section class="section soft" id="skills">
+        <div class="wrap">
+            <p class="kicker">Skills</p>
+            <h2>What I work with</h2>
+            <p class="lead">A pragmatic toolkit built over a decade of graphics and mobile engineering.</p>
+            <div class="skills-grid">
+                {% for s in skills %}
+                <div class="skill-card reveal">
+                    <h3>{{ s.category }}</h3>
+                    <p class="blurb">{{ s.blurb }}</p>
+                    <div class="chips">
+                        {% for it in s.items %}<span class="chip">{{ it }}</span>{% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section class="section" id="experience">
+        <div class="wrap">
+            <p class="kicker">Experience</p>
+            <h2>Where I've built things</h2>
+            <div class="exp reveal">
+                <div class="exp-head">
+                    <h3>{{ experience[0].company | default: "Samsung Electronics" }}</h3>
+                    <span class="dates">{{ experience[0].dates | default: "Feb 2011 – present" }}</span>
+                </div>
+                <ul class="roles">
+                    <li class="role"><span class="place">IT &amp; Mobile Communications<br><small>Suwon</small></span><span class="what">Android Developer (5 yrs) · Graphics Engineer (3 yrs)</span></li>
+                    <li class="role"><span class="place">R&amp;D Center<br><small>Samsung Research, Seoul</small></span><span class="what">Simulations Developer (3 yrs)</span></li>
+                    <li class="role"><span class="place">Creative Challenge Lab<br><small>Seoul</small></span><span class="what">Project Leader (1 yr) — in-house venture</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="section soft" id="projects">
+        <div class="wrap">
+            <p class="kicker">Selected work</p>
+            <h2>Projects</h2>
+            <p class="lead">A few highlights — from avatar animation to VR rendering and robot simulation.</p>
+            <div class="proj-grid">
+                {% for p in projects limit: 4 %}
+                {% if p.link %}<a class="proj-card reveal" href="{{ site.url }}{{ p.link }}">{% else %}<div class="proj-card reveal">{% endif %}
+                    <span class="proj-tag">{{ p.qualification | replace: "(", "" | replace: ")", "" }}</span>
+                    <h3>{{ p.name }}</h3>
+                    <div class="dates">{{ p.dates }}</div>
+                    <p>{{ p.description | striptags | truncatewords: 22 }}</p>
+                    {% if p.link %}<span class="more">Read more →</span>{% endif %}
+                {% if p.link %}</a>{% else %}</div>{% endif %}
+                {% endfor %}
+            </div>
+            <div style="margin-top:32px">
+                <a class="btn btn-ghost" href="{{ site.url }}/Site/projects/">All projects →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer / contact ===== -->
+    {% include sitefooter.html %}
+
+    <script>
+        // Reveal-on-scroll
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window) || !els.length) return;
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.12 });
+            els.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
+</body>
 </html>

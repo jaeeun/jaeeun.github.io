@@ -1,39 +1,33 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en">
 <head>
-    {% include head.html %}
+    {% include dochead.html %}
 </head>
 <body>
-    {% include nav.html %}
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="wrapper animated fadeIn">
-            <div class="content">
-                <div class="post-title {% if feature %} feature {% endif %}">
-                    <h1>{{ title }}</h1>
-                    <h4>{{ page.date | date_to_string }}</h4>
-                    {% if site.reading_time %}
-                    <p class="reading-time">
-                      <i class="fa fa-clock-o"></i>
-                      {% include read-time.html %}
-                    </p><!-- /.entry-reading-time -->
-                    {% endif %}
-                    <a class="btn zoombtn" onClick="history.go(-1)">
-                    <i class="fa fa-chevron-left"></i>
-                    </a>
-                </div>
-                {{ content }}
-                <div class="entry-meta">
-                {% include meta.html %}
+    {% include topnav.html %}
+    <main class="page narrow">
+        <div class="wrap">
+            <a class="backlink" href="{{ site.url }}/Site/posts/">← All posts</a>
+            <div class="page-head">
+                <h1>{{ title }}</h1>
+                <div class="postmeta">
+                    <span>{{ page.date | date_to_string }}</span>
+                    {% if site.reading_time %}<span>{% include read-time.html %}</span>{% endif %}
                 </div>
             </div>
+            <article class="prose">
+                {{ content }}
+            </article>
+            <div class="taglist">
+                <span class="label">Tags</span>
+                {% for tag in tags %}{% unless tag == "post" %}<a class="tagchip" href="{{ site.url }}/Site/tags/#{{ tag }}">{{ tag }}</a>{% endunless %}{% endfor %}
+            </div>
         </div>
-        {% if comments and site.disqus_shortname %}<section id="disqus_thread" class="animated fadeInUp"></section><!-- /#disqus_thread -->{% endif %}
-    </header>
-    {% include scripts.html %}
+    </main>
+    {% include sitefooter.html %}
     {% if site.mathjax %}
-    <!-- MathJax -->
-    <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     {% endif %}
 </body>
 </html>

@@ -2,7 +2,8 @@
 - name: Fingeraction Project
   dates: Feb.2022 - present
   qualification: (Project Leader)
-  quote: 
+  link: /Fingeraction/
+  quote:
   description: >
    Participated in the in-house venture program as a project leader by organizing ideas and hiring team members. <br>
    Started the project called ‘Fingeraction’, which recognizes finger gesture and makes Avatar animation automatically. 
@@ -12,6 +13,7 @@
 - name: Digital Human
   dates: Feb.2021 - Jan.2022
   qualification: (Simulation)
+  link: /DigitalHuman/
   description: >
     Attended CES 2021 in Las Vegas as a developer of the project called ‘Home Interactive Avatar’, which connects the Digital Human with the robots and home networks.<br>
     Researched and authored the patent about the “Voice to Speech Animation” with Machine Learning and BlendShapes of ARKit.
@@ -20,6 +22,7 @@
 - name: Robot Simulation
   dates: May.2019 - Jan.2021
   qualification: (Simulation)
+  link: /Robot_Simulation/
   description: >
     Developed the robot simulation including physics, sensors, motions with ROS by using Unreal engine4.
 
@@ -27,6 +30,7 @@
 - name: AREmoji App.
   dates: Feb.2018 - Apr.2019
   qualification: (Graphics)
+  link: /AREmoji-Rendering/
   description: >
     Developed and managed the in-house renderer for the GLTF model with OpenGL (Model Load, PBS rendering) <br>
     Developed the BodyTracking function with the Rigid Body Animations by using BVH data.<br>

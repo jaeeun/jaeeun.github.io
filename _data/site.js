@@ -5,7 +5,7 @@
 // and work on localhost. For a production build, set SITE_URL:
 //   SITE_URL=https://jaeeun.github.io npm run build
 module.exports = {
-  name: "Jalen (Jae-eun) Yang",
+  name: "Jalen Yang",
   title: "Graphics SW Engineer",
   bio: "Graphics SW Engineer",
   description: "",
@@ -18,8 +18,6 @@ module.exports = {
   locale: "en_US",
   url: process.env.SITE_URL || "",
 
-  // Comments
-  disqus_shortname: "https-jaeeun-github-io",
   mathjax: true,
 
   // Social (underscore keys — Liquid can't read hyphenated names)

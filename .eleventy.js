@@ -49,6 +49,12 @@ module.exports = function (eleventyConfig) {
     String(html || "").replace(/<[^>]*>/g, "")
   );
 
+  // RFC-3339 timestamp for the Atom feed (e.g. 2023-05-11T00:00:00.000Z)
+  eleventyConfig.addFilter("dateToRfc3339", (value) => {
+    const d = value instanceof Date ? value : new Date(value);
+    return isNaN(d) ? "" : d.toISOString();
+  });
+
   eleventyConfig.addFilter("truncatewords", (str, n = 30) => {
     const words = String(str || "").trim().split(/\s+/);
     return words.length > n ? words.slice(0, n).join(" ") + " …" : words.join(" ");

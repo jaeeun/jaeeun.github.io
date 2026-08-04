@@ -1,0 +1,15 @@
+<footer class="footer" id="contact">
+    <div class="wrap">
+        <h2>Let's talk</h2>
+        <p>Open to opportunities in graphics, mobile, and simulation engineering.</p>
+        <div class="footer-links">
+            {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+            {% if site.github_url %}<a href="https://github.com/{{ site.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+            {% if site.linkedin %}<a href="https://linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+            {% if site.instagram %}<a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+            <a href="{{ site.url }}/Site/posts/">Blog</a>
+            <a href="{{ site.url }}/Site/posts/Toys/">3D Demos</a>
+        </div>
+        <div class="copy">© {{ site.name }} · Built with Eleventy.</div>
+    </div>
+</footer>

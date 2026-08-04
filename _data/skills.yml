@@ -1,0 +1,36 @@
+# Developer skill set, shown as cards on the home page.
+- category: Graphics
+  blurb: Real-time rendering, avatar animation, and engine work.
+  items:
+    - OpenGL / GLSL
+    - Unreal Engine 4
+    - Unity (Shader, Native)
+    - PBR Rendering
+    - Avatar / Skeletal Animation
+    - glTF / FBX / BVH
+
+- category: Android
+  blurb: 5+ years shipping consumer apps and native libraries.
+  items:
+    - Java / Kotlin
+    - Native C++ (JNI)
+    - REST API / GraphQL
+    - Skia Animated UI
+    - Profiling (Adreno, Mali)
+    - Debugging & Optimization
+
+- category: Machine Learning
+  blurb: Applied ML for facial animation and motion.
+  items:
+    - Python
+    - TensorFlow
+    - PyTorch
+    - BlendShapes / Voice-to-Animation
+
+- category: Tools & Infra
+  blurb: The pipeline around the code.
+  items:
+    - FFmpeg
+    - Docker / AWS
+    - Git / SVN / Perforce
+    - Jira / Confluence

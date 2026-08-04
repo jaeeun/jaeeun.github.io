@@ -25,7 +25,7 @@ To check in detail, I just give him the captured image of the SketchUp.
 <img src="../Site/assets/posting_img/jaeeun_home/sketchup_entrance.png"/>
 
 #### Kitchen
-<img src="../Site/ssets/posting_img/jaeeun_home/sketchup_kitchen.png"/>
+<img src="../Site/assets/posting_img/jaeeun_home/sketchup_kitchen.png"/>
 
 #### Room 1st
 <img src="../Site/assets/posting_img/jaeeun_home/sketchup_room1.png"/>

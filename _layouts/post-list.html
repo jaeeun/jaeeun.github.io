@@ -1,53 +1,32 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en">
 <head>
-    {% include head.html %}
+    {% include dochead.html %}
 </head>
 <body>
-    {% include nav.html %}
-    <!-- Header -->
-    <header class="header" role="banner">
-        <div class="wrapper">
-            <div class="content">
-                <div class="post-title">
-                    <h1>{{ title }}</h1>
-                    <a class="btn zoombtn" href="{{ site.url }}/">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </div>
-
-                <h3 class="content">
-                    Frequently Tags
-                </h3>
-
-                <ul class="entry-meta inline-list">
-                    {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
-                    {% for this_word in tag_words %}
-                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ collections.post | filterByTag: this_word | size }}</span></a></li>
-                    {% endfor %}
-                    <li><a href="{{ site.url }}/Site/tags" class="tag"><span class="term">All Tags</span> </a></li>
-                </ul>
-
-                <div class="post-list">
-                    {% for post in collections.post %}
-                        {% unless post.data.project %}
-                    <ul>
-                        <li class="wow fadeInLeft" data-wow-duration="1.5s">
-                            <hr style="border: outset 1px gray;">
-                            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-                                {{ post.data.title }}
-                                {% if post.data.img %}<img src="{{ post.data.img }}" height="20px" width="30px">{% else %}<img src="{{ site.url }}/Site/assets/img/no-image-available.jpg" height="20px" width="30px">{% endif %}
-                            </a>
-                        </li>
-                    </ul>
-                        {% endunless %}
-                    {% endfor %}
-                </div>
+    {% include topnav.html %}
+    <main class="page">
+        <div class="wrap">
+            <a class="backlink" href="{{ site.url }}/">← Home</a>
+            <div class="page-head">
+                <h1>{{ title }}</h1>
+                <p class="sub">Notes on graphics, Android, machine learning — and life.</p>
+            </div>
+            <div class="filterbar">
+                {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
+                {% for w in tag_words %}<a class="tagchip" href="{{ site.url }}/Site/posts/{{ w }}">{{ w }}<span class="count">{{ collections.post | filterByTag: w | size }}</span></a>{% endfor %}
+                <a class="tagchip" href="{{ site.url }}/Site/tags/">All tags</a>
+            </div>
+            <div class="postlist">
+                {% for post in collections.post %}{% unless post.data.project %}
+                <a class="row" href="{{ site.url }}{{ post.url }}">
+                    {% if post.data.img %}<img class="thumb" src="{{ post.data.img }}" alt="">{% else %}<img class="thumb" src="{{ site.url }}/Site/assets/img/no-image-available.jpg" alt="">{% endif %}
+                    <span class="t">{{ post.data.title }}</span>
+                </a>
+                {% endunless %}{% endfor %}
             </div>
         </div>
-    </header>
-    {% include scripts.html %}
-    <script src="{{ site.url }}/Site/assets/js/wow.min.js"></script>
-    <script type="text/javascript">(new WOW).init();</script>
+    </main>
+    {% include sitefooter.html %}
 </body>
 </html>
