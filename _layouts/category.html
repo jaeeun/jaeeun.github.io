@@ -15,32 +15,18 @@
                         <i class="fa fa-home"></i>
                     </a>
                 </div>
-
-                <h3 class="content">
-                    Frequently Tags
-                </h3>
-
-                <ul class="entry-meta inline-list">
-                    {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
-                    {% for this_word in tag_words %}
-                    <li><a href="{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ collections.post | filterByTag: this_word | size }}</span></a></li>
-                    {% endfor %}
-                    <li><a href="{{ site.url }}/Site/tags" class="tag"><span class="term">All Tags</span> </a></li>
-                </ul>
-
                 <div class="post-list">
-                    {% for post in collections.post %}
-                        {% unless post.data.project %}
+                    {% assign cat_posts = collections.post | filterByTag: category %}
+                    {% for post in cat_posts %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
                             <hr style="border: outset 1px gray;">
                             <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
                                 {{ post.data.title }}
-                                {% if post.data.img %}<img src="{{ post.data.img }}" height="20px" width="30px">{% else %}<img src="{{ site.url }}/Site/assets/img/no-image-available.jpg" height="20px" width="30px">{% endif %}
+                                {% if post.data.img %}<img src="{{ post.data.img }}" height="20px" width="40px">{% else %}<img src="{{ site.url }}/Site/assets/img/no-image-available.jpg" height="30px" width="40px">{% endif %}
                             </a>
                         </li>
                     </ul>
-                        {% endunless %}
                     {% endfor %}
                 </div>
             </div>

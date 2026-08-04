@@ -1,39 +1,133 @@
----
-layout: compress
----
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ site.url }}/Site/assets/css/resume-theme.css">
+  <link rel="shortcut icon" type="image/png" href="{{ site.url }}/Site/favicon.png" />
+  <link rel="shortcut icon" href="{{ site.url }}/Site/favicon.ico" />
+</head>
+<body>
 
-{%- include resume/head.html -%}
-
-<body class="{% if site.darkmode == true and site.darkmode != 'never' %}dark{% endif %}">
-
-  {%- include resume/header.html -%}
+  <div class="container header-container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
+        <h1>{{ site.name | escape }}</h1>
+        <h2>{{ site.title | escape }}</h2>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
+        <ul class="icons no-print">
+          {% if site.github_url %}<li><a target="_blank" href="https://github.com/{{ site.github_url }}" class="button button--sacnite button--round-l"><i class="fab fa-github" title="Github link"></i></a></li>{% endif %}
+          {% if site.linkedin %}<li><a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin }}" class="button button--sacnite button--round-l"><i class="fab fa-linkedin" title="Linkedin link"></i></a></li>{% endif %}
+          {% if site.instagram %}<li><a target="_blank" href="https://www.instagram.com/{{ site.instagram }}" class="button button--sacnite button--round-l"><i class="fab fa-instagram" title="Instagram link"></i></a></li>{% endif %}
+        </ul>
+        {% if site.email %}<p>Email: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a></p>{% endif %}
+        {% if site.phone %}<p>Phone: {{ site.phone | escape }}</p>{% endif %}
+        {% if site.website %}<p>Blog: <a href="//{{ site.website }}" target="_blank">{{ site.website | escape }}</a></p>{% endif %}
+      </div>
+    </div>
+  </div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
 
-      {%- if jekyll.environment == 'production' and site.gtm -%}
-        {%- include resume/gtm_body.html -%}
-      {%- endif -%}
+      <!-- About -->
+      <div class="container intro-container">
+        <h3 id="about-me">About Me</h3>
+        <div class="row clearfix">
+          {% if about.about_profile_image %}
+          <div class="col-xs-12 col-sm-4 col-md-3 no-print">
+            <span class="profile-img" style="background-image: url({{ site.url }}/{{ about.about_profile_image }})"></span>
+          </div>
+          {% endif %}
+          <div class="col-xs-12 {% if about.about_profile_image %}col-sm-8 col-md-9 col-print-12{% endif %}">
+            {{ about.about_content | markdownify }}
+          </div>
+        </div>
+      </div>
 
-      {%- include resume/about.html -%}
-      {%- include resume/experience.html -%}
-      {%- include resume/projects.html -%}
-      {%- include resume/education.html -%}
-      {%- include resume/patents.html -%}
+      <!-- Experience -->
+      <div class="container experience-container">
+        <h3 id="experience">Experience</h3>
+        {% for item in experience %}
+        <div class="row clearfix layout layout-{{ item.layout | default: 'left' }}">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            {% if item.company %}<h4>{{ item.company }}</h4>{% endif %}
+            {% if item.link %}<a href="{{ item.link }}" target="_blank" class="link">{{ item.link }}</a>{% endif %}
+            {% if item.job_title %}<p><b>{{ item.job_title }}</b></p>{% endif %}
+            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+            {% if item.quote %}<p class="quote">{{ item.quote }}</p>{% endif %}
+            {{ item.description | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
 
-      {%- if site.more_content -%}
-        {%- include resume/more.html -%}
-      {%- endif -%}
+      <!-- Projects -->
+      <div class="container projects-container">
+        <h3 id="projects">Projects</h3>
+        {% for item in projects %}
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            {% if item.name %}<h4>{{ item.name }}</h4>{% endif %}
+            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
+            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+            {% if item.quote %}<p class="quote">{{ item.quote }}</p>{% endif %}
+            {{ item.description | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Education -->
+      <div class="container education-container">
+        <h3 id="education">Education</h3>
+        {% for item in education %}
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            {% if item.name %}<h4>{{ item.name }}</h4>{% endif %}
+            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
+            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+            {{ item.description | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Patents -->
+      <div class="container patents-container">
+        <h3 id="patents">Patents</h3>
+        {% for item in patents %}
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
+            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
+            {{ item.description | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
 
     </div>
   </main>
 
-  {%- include resume/footer.html -%}
-  {% if site.darkmode == false %}
-    <script src="{{ '/Site/assets/js/index.js' | relative_url }}"></script>
-  {% endif %}
-</body>
+  <div class="container footer-container">
+    <p>
+      {{ site.name | escape }} -
+      <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
+    </p>
+  </div>
 
+  <script src="{{ site.url }}/Site/assets/js/index.js"></script>
+</body>
 </html>

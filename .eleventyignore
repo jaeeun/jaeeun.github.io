@@ -1,0 +1,7 @@
+node_modules
+_site
+README.md
+LICENSE
+*.pptx
+_sass
+Site/posts/temp

@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page.html
 title: About Jalen
 date: 2022-04-29
 comments: false

@@ -1,0 +1,22 @@
+{
+  "name": "jaeeun-github-io",
+  "version": "1.0.0",
+  "description": "Jalen (Jae-eun) Yang — personal site (Eleventy)",
+  "license": "MIT",
+  "scripts": {
+    "css": "sass Site/assets/css/main.scss:Site/assets/css/main.css Site/assets/css/resume-theme.scss:Site/assets/css/resume-theme.css --load-path=_sass --style=compressed --no-source-map --quiet",
+    "css:watch": "npm run css -- --watch",
+    "eleventy": "eleventy",
+    "eleventy:serve": "eleventy --serve",
+    "build": "npm run css && eleventy",
+    "start": "npm run css && run-p css:watch eleventy:serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.3.1",
+    "markdown-it": "^14.1.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.0"
+  }
+}

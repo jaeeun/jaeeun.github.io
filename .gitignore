@@ -4,3 +4,13 @@
 _site
 Gemfile.lock
 *.code-workspace
+
+# Node / Eleventy
+node_modules
+.cache
+
+# Generated CSS (compiled from SCSS by `npm run css`)
+Site/assets/css/main.css
+Site/assets/css/main.css.map
+Site/assets/css/resume-theme.css
+Site/assets/css/resume-theme.css.map
