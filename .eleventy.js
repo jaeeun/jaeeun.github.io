@@ -65,6 +65,12 @@ module.exports = function (eleventyConfig) {
     (posts || []).filter((p) => (p.data.tags || []).includes(tag))
   );
 
+  // Drop project write-ups — those have their own section, so the blog list and
+  // its tag counts must agree on excluding them.
+  eleventyConfig.addFilter("rejectProjects", (posts) =>
+    (posts || []).filter((p) => !p.data.project)
+  );
+
   // --- Collections ---
   // All blog posts (files under _posts get the "post" tag via directory data)
   eleventyConfig.addCollection("post", (api) =>

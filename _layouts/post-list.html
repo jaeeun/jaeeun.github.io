@@ -12,21 +12,72 @@
                 <h1>{{ title }}</h1>
                 <p class="sub">Notes on graphics, Android, machine learning — and life.</p>
             </div>
-            <div class="filterbar">
+            {% assign listed_posts = collections.post | rejectProjects %}
+            <div class="filterbar" role="group" aria-label="Filter posts by tag">
                 {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
-                {% for w in tag_words %}<a class="tagchip" href="{{ site.url }}/Site/posts/{{ w }}">{{ w }}<span class="count">{{ collections.post | filterByTag: w | size }}</span></a>{% endfor %}
-                <a class="tagchip" href="{{ site.url }}/Site/tags/">All tags</a>
+                <a class="tagchip is-active" data-tag="" aria-pressed="true" href="{{ site.url }}/Site/posts/">All<span class="count">{{ listed_posts | size }}</span></a>
+                {% for w in tag_words %}<a class="tagchip" data-tag="{{ w }}" aria-pressed="false" href="{{ site.url }}/Site/posts/{{ w }}">{{ w }}<span class="count">{{ listed_posts | filterByTag: w | size }}</span></a>{% endfor %}
+                <a class="tagchip tagchip-link" href="{{ site.url }}/Site/tags/">Tag archive →</a>
             </div>
             <div class="postlist">
-                {% for post in collections.post %}{% unless post.data.project %}
-                <a class="row" href="{{ site.url }}{{ post.url }}">
+                {% for post in listed_posts %}
+                <a class="row" data-tags="{{ post.data.tags | join: ',' }}" href="{{ site.url }}{{ post.url }}">
                     {% if post.data.img %}<img class="thumb" src="{{ post.data.img }}" alt="">{% else %}<img class="thumb" src="{{ site.url }}/Site/assets/img/no-image-available.jpg" alt="">{% endif %}
                     <span class="t">{{ post.data.title }}</span>
                 </a>
-                {% endunless %}{% endfor %}
+                {% endfor %}
             </div>
+            <p class="postlist-empty" hidden>No posts with this tag yet.</p>
         </div>
     </main>
     {% include sitefooter.html %}
+
+    <script>
+        // Tag chips filter the list in place (no page load). Chips stay real links
+        // to the per-tag pages, so this is a no-JS-safe enhancement.
+        (function () {
+            var bar = document.querySelector('.filterbar');
+            var list = document.querySelector('.postlist');
+            if (!bar || !list) return;
+            var chips = [].slice.call(bar.querySelectorAll('.tagchip[data-tag]'));
+            var rows = [].slice.call(list.querySelectorAll('.row'));
+            var empty = document.querySelector('.postlist-empty');
+
+            function apply(tag) {
+                var shown = 0;
+                rows.forEach(function (row) {
+                    var tags = (row.getAttribute('data-tags') || '').split(',');
+                    var match = !tag || tags.indexOf(tag) !== -1;
+                    row.hidden = !match;
+                    if (match) shown++;
+                });
+                chips.forEach(function (chip) {
+                    var on = chip.getAttribute('data-tag') === tag;
+                    chip.classList.toggle('is-active', on);
+                    chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+                if (empty) empty.hidden = shown > 0;
+            }
+
+            function tagFromHash() {
+                var m = /^#tag=(.*)$/.exec(location.hash);
+                return m ? decodeURIComponent(m[1]) : '';
+            }
+
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    var tag = chip.getAttribute('data-tag');
+                    if (tag && chip.classList.contains('is-active')) tag = ''; // click again to clear
+                    var url = tag ? '#tag=' + encodeURIComponent(tag) : location.pathname;
+                    history.replaceState(null, '', url);
+                    apply(tag);
+                });
+            });
+
+            window.addEventListener('hashchange', function () { apply(tagFromHash()); });
+            apply(tagFromHash());
+        })();
+    </script>
 </body>
 </html>

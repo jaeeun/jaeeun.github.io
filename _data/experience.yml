@@ -1,9 +1,24 @@
 - layout: left
+  company: Upfeat Media Inc.
+  link: https://www.upfeat.com
+  job_title: Senior Software Engineer
+  dates: November 2023 - present
+  quote:
+  description: >
+    <b>Product Engineering</b>, Winnipeg — remote from Toronto<br>
+    &nbsp;&nbsp;       <mark>AR</mark> / <mark>Computer Vision</mark> Developer<br>
+    &nbsp;&nbsp;       <mark>Full-stack</mark> Developer
+  roles:
+    - place: Product Engineering
+      small: Winnipeg, MB — remote from Toronto
+      what: AR &amp; Computer Vision Developer · Full-stack Developer
+
+- layout: left
   company: Samsung Electronics Co., Ltd.
   link: https://www.samsung.com
   job_title: Staff SW Engineer
-  dates: February 2011 - present
-  quote: 
+  dates: February 2011 - May 2023
+  quote:
   description: >
     <b>IT & Mobile Communications</b>, Suwon<br>
     &nbsp;&nbsp;       <mark>Android</mark> Developer (5 years)<br>
@@ -14,3 +29,13 @@
     <br>
     <b>Creative Challenge Lab</b>, Seoul<br>
     &nbsp;&nbsp;       Project Leader (1 year)
+  roles:
+    - place: IT &amp; Mobile Communications
+      small: Suwon
+      what: Android Developer (5 yrs) · Graphics Engineer (3 yrs)
+    - place: R&amp;D Center
+      small: Samsung Research, Seoul
+      what: Simulations Developer (3 yrs)
+    - place: Creative Challenge Lab
+      small: Seoul
+      what: Project Leader (1 yr) — in-house venture

@@ -10,6 +10,7 @@
     "eleventy:serve": "eleventy --serve",
     "build": "npm run css && eleventy",
     "start": "npm run css && run-p css:watch eleventy:serve",
+    "dev": "npm start",
     "clean": "rm -rf _site"
   },
   "devDependencies": {

@@ -82,16 +82,20 @@
         <div class="wrap">
             <p class="kicker">Experience</p>
             <h2>Where I've built things</h2>
-            <div class="exp reveal">
-                <div class="exp-head">
-                    <h3>{{ experience[0].company | default: "Samsung Electronics" }}</h3>
-                    <span class="dates">{{ experience[0].dates | default: "Feb 2011 – present" }}</span>
+            <div class="exp-list">
+                {% for job in experience %}
+                <div class="exp reveal">
+                    <div class="exp-head">
+                        <h3>{{ job.company }}</h3>
+                        <span class="dates">{{ job.dates }}</span>
+                    </div>
+                    <ul class="roles">
+                        {% for r in job.roles %}
+                        <li class="role"><span class="place">{{ r.place }}{% if r.small %}<br><small>{{ r.small }}</small>{% endif %}</span><span class="what">{{ r.what }}</span></li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <ul class="roles">
-                    <li class="role"><span class="place">IT &amp; Mobile Communications<br><small>Suwon</small></span><span class="what">Android Developer (5 yrs) · Graphics Engineer (3 yrs)</span></li>
-                    <li class="role"><span class="place">R&amp;D Center<br><small>Samsung Research, Seoul</small></span><span class="what">Simulations Developer (3 yrs)</span></li>
-                    <li class="role"><span class="place">Creative Challenge Lab<br><small>Seoul</small></span><span class="what">Project Leader (1 yr) — in-house venture</span></li>
-                </ul>
+                {% endfor %}
             </div>
         </div>
     </section>
