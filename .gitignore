@@ -4,6 +4,7 @@
 _site
 Gemfile.lock
 *.code-workspace
+.DS_Store
 
 # Node / Eleventy
 node_modules
