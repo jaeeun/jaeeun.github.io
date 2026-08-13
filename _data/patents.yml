@@ -1,26 +1,24 @@
+- name:
+  dates:
+  qualification: US Patent 12,450,809
+  description: "Method and apparatus for providing interactive avatar services"
 
-- name: 
-  dates: 
+- name:
+  dates:
   qualification: US Patent 11,244,422
-  description: "Image processing device and image processing method the thereof" 
+  description: "Image processing device and image processing method thereof"
 
 - name:
-  dates: 
-  qualification: US Patent 10,331,208
-  description: "Image output method anbd electonic device for supporting same" 
-
-- name:
-  dates: 
-  qualification: US Patent 10,650,596
-  description: "Electronic device and method of providing VR image based on polyhedron" 
-
-- name:
-  dates: 
+  dates:
   qualification: US Patent 11,189,071
-  description: "Electronic device for providing avatar animation and method related to same" 
+  description: "Electronic device for providing avatar animation and method related to same"
 
 - name:
-  dates: 
-  qualification: (Proceeding)
-  description: "How to make BlendShapes Animation with User's situation adaptive face expression and inferred Lib sync data from the voice"
+  dates:
+  qualification: US Patent 10,650,596
+  description: "Electronic device and method of providing VR image based on polyhedron"
 
+- name:
+  dates:
+  qualification: US Patent 10,331,208
+  description: "Image output method and electronic device for supporting same"

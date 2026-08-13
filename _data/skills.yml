@@ -1,36 +1,64 @@
-# Developer skill set, shown as cards on the home page.
-- category: Graphics
-  blurb: Real-time rendering, avatar animation, and engine work.
-  items:
-    - OpenGL / GLSL
-    - Unreal Engine 4
-    - Unity (Shader, Native)
-    - PBR Rendering
-    - Avatar / Skeletal Animation
-    - glTF / FBX / BVH
-
-- category: Android
-  blurb: 5+ years shipping consumer apps and native libraries.
-  items:
-    - Java / Kotlin
-    - Native C++ (JNI)
-    - REST API / GraphQL
-    - Skia Animated UI
-    - Profiling (Adreno, Mali)
-    - Debugging & Optimization
-
-- category: Machine Learning
-  blurb: Applied ML for facial animation and motion.
+- category: Languages
+  blurb: Core programming languages
   items:
     - Python
-    - TensorFlow
-    - PyTorch
-    - BlendShapes / Voice-to-Animation
+    - Kotlin
+    - Java
+    - C/C++
+    - JavaScript/TypeScript
 
-- category: Tools & Infra
-  blurb: The pipeline around the code.
+- category: Mobile & Frontend
+  blurb: Mobile and web application development
   items:
+    - Android (Java, Kotlin, Native C++)
+    - Skia UI
+    - iOS
+    - React Native
+    - React
+    - RESTful API / GraphQL
+
+- category: Computer Vision & ML
+  blurb: Vision, ML frameworks, and AR/VR pipelines
+  items:
+    - OpenCV
+    - TensorFlow / PyTorch
+    - YOLO
+    - 3D Pose Estimation
+    - Gesture Recognition
+    - ARKit BlendShapes
+    - ARCore / ARKit
+
+- category: AI Systems & Orchestration
+  blurb: Production AI pipelines and automation
+  items:
+    - LLM-orchestrated pipelines
+    - Multi-container agent workflows
+    - Anti-detection headless browser (Camoufox)
+    - Distributed / parallel data collection
+
+- category: DevOps & Infrastructure
+  blurb: Cloud, CI/CD, and tooling
+  items:
+    - AWS
+    - Docker
+    - Firebase
+    - Elasticsearch
     - FFmpeg
-    - Docker / AWS
-    - Git / SVN / Perforce
-    - Jira / Confluence
+    - Git / GitLab CI/CD / Jenkins / Perforce
+
+- category: Graphics & Simulation
+  blurb: Real-time rendering, engines, and simulation
+  items:
+    - OpenGL ES Renderer
+    - Unreal Engine 4
+    - Unity 3D
+    - Custom Shaders (GLSL/HLSL)
+    - PBR Workflows
+    - ROS2
+
+- category: Performance Tuning
+  blurb: Profiling and optimization
+  items:
+    - GPU Profiling (Adreno, Mali, Google Debugger)
+    - Memory Optimization
+    - Frame-rate Optimization

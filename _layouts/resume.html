@@ -11,123 +11,148 @@
 </head>
 <body>
 
-  <div class="container header-container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 header-left">
-        <h1>{{ site.name | escape }}</h1>
-        <h2>{{ site.title | escape }}</h2>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 header-right">
-        <ul class="icons no-print">
-          {% if site.github_url %}<li><a target="_blank" href="https://github.com/{{ site.github_url }}" class="button button--sacnite button--round-l"><i class="fab fa-github" title="Github link"></i></a></li>{% endif %}
-          {% if site.linkedin %}<li><a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin }}" class="button button--sacnite button--round-l"><i class="fab fa-linkedin" title="Linkedin link"></i></a></li>{% endif %}
-          {% if site.instagram %}<li><a target="_blank" href="https://www.instagram.com/{{ site.instagram }}" class="button button--sacnite button--round-l"><i class="fab fa-instagram" title="Instagram link"></i></a></li>{% endif %}
-        </ul>
-        {% if site.email %}<p>Email: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a></p>{% endif %}
-        {% if site.phone %}<p>Phone: {{ site.phone | escape }}</p>{% endif %}
-        {% if site.website %}<p>Blog: <a href="//{{ site.website }}" target="_blank">{{ site.website | escape }}</a></p>{% endif %}
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-left">
+          <h1 class="name">{{ site.name | escape }}</h1>
+          <p class="title">{{ site.title | escape }}</p>
+        </div>
+        <div class="header-right">
+          <div class="contact-info">
+            {% if site.email %}<a href="mailto:{{ site.email }}" target="_blank"><i class="fas fa-envelope"></i> {{ site.email | escape }}</a>{% endif %}
+            {% if site.phone %}<span><i class="fas fa-phone"></i> {{ site.phone | escape }}</span>{% endif %}
+            {% if site.website %}<a href="//{{ site.website }}" target="_blank"><i class="fas fa-globe"></i> {{ site.website | escape }}</a>{% endif %}
+            {% if site.linkedin %}<a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>{% endif %}
+            {% if site.github_url %}<a href="https://github.com/{{ site.github_url }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>{% endif %}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </header>
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
+  <main class="page-content">
+    <div class="container">
 
-      <!-- About -->
-      <div class="container intro-container">
-        <h3 id="about-me">About Me</h3>
-        <div class="row clearfix">
+      <!-- ===== About ===== -->
+      <section class="section about-section">
+        <div class="section-header">
+          <h2><i class="fas fa-user"></i> About Me</h2>
+        </div>
+        <div class="about-grid">
           {% if about.about_profile_image %}
-          <div class="col-xs-12 col-sm-4 col-md-3 no-print">
-            <span class="profile-img" style="background-image: url({{ site.url }}/{{ about.about_profile_image }})"></span>
+          <div class="about-avatar no-print">
+            <img src="{{ site.url }}/{{ about.about_profile_image }}" alt="{{ site.name }}">
           </div>
           {% endif %}
-          <div class="col-xs-12 {% if about.about_profile_image %}col-sm-8 col-md-9 col-print-12{% endif %}">
+          <div class="about-content">
             {{ about.about_content | markdownify }}
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Experience -->
-      <div class="container experience-container">
-        <h3 id="experience">Experience</h3>
+      <!-- ===== Experience ===== -->
+      <section class="section experience-section">
+        <div class="section-header">
+          <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        </div>
         {% for item in experience %}
-        <div class="row clearfix layout layout-{{ item.layout | default: 'left' }}">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-            {% if item.company %}<h4>{{ item.company }}</h4>{% endif %}
-            {% if item.link %}<a href="{{ item.link }}" target="_blank" class="link">{{ item.link }}</a>{% endif %}
-            {% if item.job_title %}<p><b>{{ item.job_title }}</b></p>{% endif %}
-            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-            {% if item.quote %}<p class="quote">{{ item.quote }}</p>{% endif %}
-            {{ item.description | markdownify }}
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-      <!-- Projects -->
-      <div class="container projects-container">
-        <h3 id="projects">Projects</h3>
-        {% for item in projects %}
-        <div class="row clearfix layout layout-left">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-            {% if item.name %}<h4>{{ item.name }}</h4>{% endif %}
-            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
-            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-            {% if item.quote %}<p class="quote">{{ item.quote }}</p>{% endif %}
-            {{ item.description | markdownify }}
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div class="timeline-title">
+                <h3>{{ item.company }}</h3>
+                {% if item.job_title %}<span class="job-title">{{ item.job_title }}</span>{% endif %}
+              </div>
+              <div class="timeline-meta">
+                {% if item.dates %}<span class="dates"><i class="far fa-calendar-alt"></i> {{ item.dates }}</span>{% endif %}
+                {% if item.link %}<a href="{{ item.link }}" target="_blank" class="company-link"><i class="fas fa-external-link-alt"></i></a>{% endif %}
+              </div>
+            </div>
+            <div class="timeline-body">
+              {{ item.description | markdownify }}
+            </div>
           </div>
         </div>
         {% endfor %}
-      </div>
+      </section>
 
-      <!-- Education -->
-      <div class="container education-container">
-        <h3 id="education">Education</h3>
+      <!-- ===== Projects ===== -->
+      <section class="section projects-section">
+        <div class="section-header">
+          <h2><i class="fas fa-code"></i> Projects</h2>
+        </div>
+        <div class="projects-grid">
+          {% for item in projects %}
+          <div class="project-card">
+            <div class="project-card-header">
+              {% if item.qualification %}<span class="project-tag">{{ item.qualification | replace: "(", "" | replace: ")", "" }}</span>{% endif %}
+              <h4>{% if item.link %}<a href="{{ site.url }}{{ item.link }}">{{ item.name }}</a>{% else %}{{ item.name }}{% endif %}</h4>
+              {% if item.dates %}<span class="dates">{{ item.dates }}</span>{% endif %}
+            </div>
+            <p class="project-desc">{{ item.description | striptags | truncatewords: 30 }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- ===== Education ===== -->
+      <section class="section education-section">
+        <div class="section-header">
+          <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        </div>
         {% for item in education %}
-        <div class="row clearfix layout layout-left">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-            {% if item.name %}<h4>{{ item.name }}</h4>{% endif %}
-            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
-            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-            {{ item.description | markdownify }}
-          </div>
+        <div class="edu-item">
+          <h4>{{ item.name }}</h4>
+          {% if item.qualification %}<p class="qualification">{{ item.qualification }}</p>{% endif %}
+          {% if item.dates %}<span class="dates">{{ item.dates }}</span>{% endif %}
+          <div class="edu-desc">{{ item.description | markdownify }}</div>
         </div>
         {% endfor %}
-      </div>
+      </section>
 
-      <!-- Patents -->
-      <div class="container patents-container">
-        <h3 id="patents">Patents</h3>
-        {% for item in patents %}
-        <div class="row clearfix layout layout-left">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-            {% if item.qualification %}<p><b>{{ item.qualification }}</b></p>{% endif %}
-            {% if item.dates %}<p>{{ item.dates }}</p>{% endif %}
-          </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-            {{ item.description | markdownify }}
-          </div>
+      <!-- ===== Patents ===== -->
+      <section class="section patents-section">
+        <div class="section-header">
+          <h2><i class="fas fa-certificate"></i> U.S. Patents</h2>
         </div>
-        {% endfor %}
-      </div>
+        <div class="patents-list">
+          {% for item in patents %}
+          <div class="patent-item">
+            <span class="patent-number">{{ item.qualification }}</span>
+            <span class="patent-title">{{ item.description }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- ===== Certifications ===== -->
+      <section class="section certifications-section">
+        <div class="section-header">
+          <h2><i class="fas fa-award"></i> Certifications</h2>
+        </div>
+        <div class="cert-list">
+          {% for item in certifications %}
+          <div class="cert-item">
+            <h4>{{ item.name }}</h4>
+            {% if item.issuer %}<span class="cert-issuer">{{ item.issuer }}</span>{% endif %}
+            {% if item.description %}<p class="cert-desc">{{ item.description }}</p>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </section>
 
     </div>
   </main>
 
-  <div class="container footer-container">
-    <p>
-      {{ site.name | escape }} -
-      <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
-    </p>
-  </div>
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>{{ site.name | escape }} &mdash; <a href="mailto:{{ site.email }}">{{ site.email | escape }}</a></p>
+    </div>
+  </footer>
 
-  <script src="{{ site.url }}/Site/assets/js/index.js"></script>
 </body>
 </html>

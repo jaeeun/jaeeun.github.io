@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.name }} — {{ site.title }}</title>
-    <meta name="description" content="{{ site.name }}, {{ site.title }}. 12+ years in Graphics & Android software engineering.">
+    <meta name="description" content="{{ site.name }}, {{ site.title }}. 14+ years in full-stack, computer vision, and real-time graphics.">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     <link rel="shortcut icon" type="image/png" href="{{ site.url }}/Site/favicon.png">
     <link rel="stylesheet" href="{{ site.url }}/Site/assets/css/home.css">
@@ -23,10 +23,10 @@
     <section class="hero" id="top">
         <div class="wrap hero-inner">
             <div class="hero-text">
-                <span class="eyebrow">Graphics &amp; Android Engineer</span>
+                <span class="eyebrow">Senior Software Engineer</span>
                 <h1>Hi, I'm Jalen<span class="grad-text"> Yang</span></h1>
-                <p class="hero-role">Staff Software Engineer · 12+ years shipping real-time graphics, avatar animation, and Android apps.</p>
-                <p class="hero-tagline">I build renderers, simulations, and mobile software — from OpenGL and Unreal Engine to native Android and applied ML.</p>
+                <p class="hero-role">Senior Software Engineer · 14+ years shipping full-stack, computer vision, and real-time graphics.</p>
+                <p class="hero-tagline">I build production AI systems, AR/CV features, and high-performance rendering — from OpenGL and Unreal Engine to LLM-orchestrated pipelines.</p>
                 <div class="hero-cta">
                     <a class="btn btn-primary" href="{{ site.url }}/Site/resume/">View Resume</a>
                     <a class="btn btn-ghost" href="#projects">See Projects</a>
@@ -46,13 +46,12 @@
     <section class="section" id="about">
         <div class="wrap">
             <p class="kicker">About</p>
-            <h2>Engineering across graphics, mobile &amp; ML</h2>
-            <p class="lead">Seeking a role where I can apply 12 years of experience in Graphics and Android — building rendering pipelines, avatar animation systems, and consumer applications — while continuing to grow into new domains. Korean (native), English (intermediate).</p>
+            <h2>Engineering across full-stack, CV &amp; graphics</h2>
+            <p class="lead">Senior Software Engineer with 14+ years across full-stack, computer vision, and real-time graphics. Shipping production AI systems at Upfeat, building on a decade of R&D leadership at Samsung Electronics. Strong in high-performance optimization and algorithm design, with a track record of shipping research into production.</p>
             <div class="stats reveal">
-                <div class="stat"><div class="stat-num grad-text">12+</div><div class="stat-label">Years experience</div></div>
-                <div class="stat"><div class="stat-num grad-text">4</div><div class="stat-label">US Patents</div></div>
+                <div class="stat"><div class="stat-num grad-text">14+</div><div class="stat-label">Years experience</div></div>
+                <div class="stat"><div class="stat-num grad-text">5</div><div class="stat-label">US Patents</div></div>
                 <div class="stat"><div class="stat-num grad-text">{{ projects | size }}</div><div class="stat-label">Projects shipped</div></div>
-                <div class="stat"><div class="stat-num grad-text">2×</div><div class="stat-label">CES showcases</div></div>
             </div>
         </div>
     </section>
@@ -62,7 +61,7 @@
         <div class="wrap">
             <p class="kicker">Skills</p>
             <h2>What I work with</h2>
-            <p class="lead">A pragmatic toolkit built over a decade of graphics and mobile engineering.</p>
+            <p class="lead">A pragmatic toolkit built over 14 years of full-stack, CV, and graphics engineering.</p>
             <div class="skills-grid">
                 {% for s in skills %}
                 <div class="skill-card reveal">
@@ -80,20 +79,29 @@
     <!-- ===== Experience ===== -->
     <section class="section" id="experience">
         <div class="wrap">
-            <p class="kicker">Experience</p>
+            <p class="kicker">Career Journey</p>
             <h2>Where I've built things</h2>
-            <div class="exp-list">
+            <p class="lead">From real-time rendering at Samsung to production AI systems at Upfeat — a decade of shipping software that matters.</p>
+            <div class="career-timeline">
                 {% for job in experience %}
-                <div class="exp reveal">
-                    <div class="exp-head">
-                        <h3>{{ job.company }}</h3>
-                        <span class="dates">{{ job.dates }}</span>
+                <div class="career-card reveal">
+                    <div class="career-card-side">
+                        <div class="career-dot"></div>
+                        {% if forloop.last == false %}<div class="career-line"></div>{% endif %}
                     </div>
-                    <ul class="roles">
-                        {% for r in job.roles %}
-                        <li class="role"><span class="place">{{ r.place }}{% if r.small %}<br><small>{{ r.small }}</small>{% endif %}</span><span class="what">{{ r.what }}</span></li>
-                        {% endfor %}
-                    </ul>
+                    <div class="career-card-body">
+                        <div class="career-card-header" onclick="this.parentElement.parentElement.classList.toggle('expanded')">
+                            <div class="career-info">
+                                <span class="career-dates">{{ job.dates }}</span>
+                                <h3>{{ job.company }}</h3>
+                                <span class="career-role">{{ job.job_title }}</span>
+                            </div>
+                            <div class="career-toggle"><span class="toggle-icon">+</span></div>
+                        </div>
+                        <div class="career-card-detail">
+                            {{ job.description | markdownify }}
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
@@ -105,7 +113,7 @@
         <div class="wrap">
             <p class="kicker">Selected work</p>
             <h2>Projects</h2>
-            <p class="lead">A few highlights — from avatar animation to VR rendering and robot simulation.</p>
+            <p class="lead">A few highlights — from AR/CV applications to AI pipelines and real-time rendering.</p>
             <div class="proj-grid">
                 {% for p in projects limit: 4 %}
                 {% if p.link %}<a class="proj-card reveal" href="{{ site.url }}{{ p.link }}">{% else %}<div class="proj-card reveal">{% endif %}

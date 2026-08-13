@@ -1,83 +1,84 @@
-# Project template
+- name: Grocery Store AR Application
+  dates: Nov 2023 – Present
+  qualification: (Computer Vision / AR)
+  link:
+  description: >
+    Spearheaded the development of an AR-based grocery scanning application,
+    implementing real-time computer vision with OpenCV and YOLO; ran object detection
+    at 30 FPS and interpolated results to a smooth 60 FPS render for a fluid,
+    low-latency AR experience within ARCore.
+
+- name: AI-Orchestrated Web-Crawling
+  dates: Nov 2023 – Present
+  qualification: (AI Systems)
+  link:
+  description: >
+    Designed an AI-orchestrated web crawling system that coordinates 5 containers
+    in parallel (fan-out/fan-in), delivering ~5× throughput over sequential collection
+    and reliably serving ~100 users in production.
+
 - name: Fingeraction Project
-  dates: Feb.2022 - present
+  dates: Feb 2022 – Apr 2023
   qualification: (Project Leader)
   link: /Fingeraction/
-  quote:
   description: >
-   Participated in the in-house venture program as a project leader by organizing ideas and hiring team members. <br>
-   Started the project called ‘Fingeraction’, which recognizes finger gesture and makes Avatar animation automatically. 
+    Selected as Project Leader for Samsung's competitive in-house venture (C-Lab);
+    managed the entire lifecycle from concept validation and team formation to technical execution.
+    Architected a real-time finger gesture recognition pipeline that automated avatar animations
+    and interactive 3D UI control within Unreal Engine.
 
-
-
-- name: Digital Human
-  dates: Feb.2021 - Jan.2022
+- name: Digital Human (CES 2022)
+  dates: May 2019 – Jan 2022
   qualification: (Simulation)
   link: /DigitalHuman/
   description: >
-    Attended CES 2021 in Las Vegas as a developer of the project called ‘Home Interactive Avatar’, which connects the Digital Human with the robots and home networks.<br>
-    Researched and authored the patent about the “Voice to Speech Animation” with Machine Learning and BlendShapes of ARKit.
-
+    Developed core integration frameworks linking Digital Humans with smart appliances
+    and advanced robotics (Bot Handy, Bot i) for Samsung's "Future Home Experience" showcased at CES 2022.
+    Engineered and patented an ML-based "Voice-to-Speech Animation" system utilizing ARKit BlendShapes
+    for high-fidelity facial expressions.
 
 - name: Robot Simulation
-  dates: May.2019 - Jan.2021
+  dates: May 2019 – Jan 2022
   qualification: (Simulation)
   link: /Robot_Simulation/
   description: >
-    Developed the robot simulation including physics, sensors, motions with ROS by using Unreal engine4.
+    Built a robot simulation environment inside Unreal Engine 4, integrating complex rigid-body physics,
+    sensor arrays, and motion planning algorithms via ROS2.
 
-
-- name: AREmoji App.
-  dates: Feb.2018 - Apr.2019
+- name: AR Emoji Application
+  dates: Feb 2018 – Apr 2019
   qualification: (Graphics)
   link: /AREmoji-Rendering/
   description: >
-    Developed and managed the in-house renderer for the GLTF model with OpenGL (Model Load, PBS rendering) <br>
-    Developed the BodyTracking function with the Rigid Body Animations by using BVH data.<br>
-    Developed the plugin of Unity for 3rd party Game apps.
+    Developed an OpenGL ES-based GLTF renderer supporting PBR (Physically Based Rendering) workflows
+    and optimized asynchronous model loading pipelines.
+    Created a high-precision body tracking module using BVH data and designed a cross-platform Unity plugin
+    for third-party game engine integration.
 
-
-- name: Samsung VR App.
-  dates: 2017.Feb - Jan.2018
+- name: Samsung VR & UFC Live
+  dates: Feb 2017 – Jan 2018
   qualification: (Graphics)
   description: >
-    Developed Samsung VR App based RESTful api and GraphQL.<br>
-    Developed 4K Streaming (Added the ‘Stitching’ solution into the FFmpeg filter in the AWS docker.)<br>
-    Developed the ‘Stabilization’ solution.
-
+    Architected a 4K cloud-stitching video pipeline using FFmpeg and AWS Docker, achieving low-latency,
+    high-fidelity real-time streaming for 10K+ concurrent users.
+    Engineered feature-tracking and 3D texture projection algorithms across XYZ axes to eliminate visual jitter.
 
 - name: VR Rendering Solution
-  dates: May.2016 - Jan.2017
+  dates: May 2016 – Jan 2017
   qualification: (Graphics)
   description: >
-    Developed the Foveated Rendering for mobiles. <br>
-    -	Ported the Eye tracking solution of SMI.<br>
-    -	Implemented the 2 layer by using stencil to focus on the gazing point.<br>
-    -	Added the shader(GLSL,HLSL) to blend with each layers.<br>
-    <br>
-    Participated in the project called ‘Octahedron projection’ which makes the efficient VR rendering solution for Samsung VR<br>
-    -	Implemented the shader (GLSL) to blend each face of Octahedron.
+    Ported and integrated SMI's Eye-Tracking solutions. Implemented stencil-based foveated rendering
+    using custom GLSL/HLSL shaders, reducing GPU overhead by 30% and maintaining a stable 90 FPS.
 
-- name: OnCircle App.
-  dates: May.2015 - Apr.2016
+- name: OnCircle App (Galaxy S6 Edge)
+  dates: May 2015 – Apr 2016
   qualification: (Android)
   description: >
-    Circle UI communicator for Galaxy S6 (Edge type). <br>
-    -	Developed various type of messages (AGIF, Emoticon, Touch and Drag), animation UI
-
+    Developed flagship features for the Galaxy S series, including the OnCircle UI communicator
+    for Galaxy S6 Edge.
 
 - name: Kids Mode in Galaxy
-  dates: May.2014 ~ Apr.2015
+  dates: May 2014 – Apr 2015
   qualification: (Android)
   description: >
-    Managed life cycle of the native applications for kids in Galaxy Store.<br>
-    Developed animated UI of Parental Control, Kids Camera, Kids Voice Recorder and etc.
-
-
-- name: ETC apps
-  dates: Feb.2011 ~ Apr.2013
-  qualification: (Android)
-  description: >
-    Managed 3rd party apps, Maintain releases of Tablet products, Quick panel, Video player
-
-
+    Developed the core 2D/3D framework for Kids Mode utilizing Unity.

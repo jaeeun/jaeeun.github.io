@@ -1,0 +1,11 @@
+- name: "Samsung S/W Certification – Professional Grade"
+  issuer: Samsung Electronics
+  description: "Certification validating algorithm problem solving, advanced data structures, and runtime optimization skills"
+
+- name: "Oracle Certified Java Programmer (OCJP)"
+  issuer: Oracle
+  description:
+
+- name: "OPIC (English Speaking exam) – Intermediate 2"
+  issuer:
+  description:

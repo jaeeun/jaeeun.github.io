@@ -5,9 +5,9 @@
 // and work on localhost. For a production build, set SITE_URL:
 //   SITE_URL=https://jaeeun.github.io npm run build
 module.exports = {
-  name: "Jalen Yang",
-  title: "Graphics SW Engineer",
-  bio: "Graphics SW Engineer",
+  name: "Jaeeun (Jalen) Yang",
+  title: "Senior Software Engineer | 14+ Years Experience | 5 US Patents",
+  bio: "Senior Software Engineer | 14+ Years Experience | 5 US Patents",
   description: "",
   reading_time: true,
   words_per_minute: 200,
@@ -25,6 +25,6 @@ module.exports = {
   github_url: "jaeeun",
   linkedin: "jaeeunyang",
   instagram: "yangtkboy",
-  phone: "+1-437-214-1185",
+  phone: "+1-437-933-1212",
   website: "jaeeun.github.io",
 };

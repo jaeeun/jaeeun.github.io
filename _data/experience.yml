@@ -1,41 +1,47 @@
 - layout: left
   company: Upfeat Media Inc.
   link: https://www.upfeat.com
-  job_title: Senior Software Engineer
-  dates: November 2023 - present
-  quote:
-  description: >
-    <b>Product Engineering</b>, Winnipeg — remote from Toronto<br>
-    &nbsp;&nbsp;       <mark>AR</mark> / <mark>Computer Vision</mark> Developer<br>
-    &nbsp;&nbsp;       <mark>Full-stack</mark> Developer
-  roles:
-    - place: Product Engineering
-      small: Winnipeg, MB — remote from Toronto
-      what: AR &amp; Computer Vision Developer · Full-stack Developer
+  job_title: Software Engineer
+  dates: November 2023 – Present
+  description: |
+    **Product Engineering**, Winnipeg, MB (Remote from Oakville, ON)
+
+    - **Grocery Store AR Application:** Spearheaded the development of an AR-based grocery scanning application, implementing real-time computer vision with OpenCV and YOLO; ran object detection at 30 FPS and interpolated results to a smooth 60 FPS render for a fluid, low-latency AR experience within ARCore.
+    - **AI-Orchestrated Web-Crawling:** Designed an AI-orchestrated web crawling system that coordinates 5 containers in parallel (fan-out/fan-in), delivering ~5× throughput over sequential collection and reliably serving ~100 users in production.
+    - **Full-Stack & Cloud Integration:** Engineered a scalable backend using Firebase and Elasticsearch to handle complex search queries and automated cloud workflows, operated reliably in production for 2 years.
+    - **Admin Dashboard & Modernization:** Architected an administrative dashboard and login system with React, serving ~100 active users and streamlining full-stack workflows to accelerate new service deployment through AI-driven automation.
 
 - layout: left
-  company: Samsung Electronics Co., Ltd.
+  company: Samsung Electronics
   link: https://www.samsung.com
-  job_title: Staff SW Engineer
-  dates: February 2011 - May 2023
-  quote:
-  description: >
-    <b>IT & Mobile Communications</b>, Suwon<br>
-    &nbsp;&nbsp;       <mark>Android</mark> Developer (5 years)<br>
-    &nbsp;&nbsp;       <mark>Graphics</mark> Engineer (3 years)<br>
-    <br>
-    <b>R&D Center (Samsung Research)</b>, Seoul<br>
-    &nbsp;&nbsp;       <mark>Simulations</mark> Developer (3 years)<br>
-    <br>
-    <b>Creative Challenge Lab</b>, Seoul<br>
-    &nbsp;&nbsp;       Project Leader (1 year)
-  roles:
-    - place: IT &amp; Mobile Communications
-      small: Suwon
-      what: Android Developer (5 yrs) · Graphics Engineer (3 yrs)
-    - place: R&amp;D Center
-      small: Samsung Research, Seoul
-      what: Simulations Developer (3 yrs)
-    - place: Creative Challenge Lab
-      small: Seoul
-      what: Project Leader (1 yr) — in-house venture
+  job_title: Staff Software Engineer / Lead Developer
+  dates: February 2011 – April 2023
+  description: |
+    ---
+
+    **Project Leader & Lead Programmer** | C-Lab (In-house Incubation), Seoul
+    <br><small>Feb 2022 – Apr 2023</small>
+
+    - **Fingeraction Project:** Selected as Project Leader for a competitive in-house venture; managed the entire lifecycle from concept validation and team formation to technical execution.
+    - **3D UI Automation:** Architected a real-time finger gesture recognition pipeline that automated avatar animations and interactive 3D UI control within Unreal Engine.
+
+    ---
+
+    **Senior Software Developer** | R&D Center – Samsung Research, Seoul
+    <br><small>May 2019 – Jan 2022</small>
+
+    - **Robot Simulation:** Built a robot simulation environment inside Unreal Engine 4, integrating complex rigid-body physics, sensor arrays, and motion planning algorithms via ROS2.
+    - **AI Animation Patent:** Engineered and patented an ML-based "Voice-to-Speech Animation" system utilizing ARKit BlendShapes for high-fidelity facial expressions.
+    - **Digital Human (CES 2022):** Developed core integration frameworks linking Digital Humans with smart appliances and advanced robotics (Bot Handy, Bot i) for Samsung's "Future Home Experience" showcased at CES 2022.
+
+    ---
+
+    **Software Engineer** | IT & Mobile Communications, Suwon
+    <br><small>Feb 2011 – Apr 2019</small>
+
+    - **AR Emoji Application (2018–2019):** Developed an OpenGL ES-based GLTF renderer supporting PBR workflows and optimized asynchronous model loading pipelines. Created a high-precision body tracking module using BVH data and designed a cross-platform Unity plugin for third-party game engine integration.
+    - **Samsung VR & UFC Live (2017–2018):** Architected a 4K cloud-stitching video pipeline using FFmpeg and AWS Docker, achieving low-latency, high-fidelity real-time streaming for 10K+ concurrent users. Engineered feature-tracking and 3D texture projection algorithms across XYZ axes to eliminate visual jitter.
+    - **VR Rendering Solutions (2016–2017):** Ported and integrated SMI's Eye-Tracking solutions. Implemented stencil-based foveated rendering using custom GLSL/HLSL shaders, reducing GPU overhead by 30% and maintaining a stable 90 FPS.
+    - **OnCircle – Galaxy S6 Edge (2015–2016):** Developed the Circle UI communicator for Galaxy S6 Edge, including various message types (AGIF, Emoticon, Touch and Drag) with animation UI.
+    - **Kids Mode in Galaxy (2014–2015):** Developed the core 2D/3D framework for Kids Mode utilizing Unity. Managed life cycle of native applications for kids in Galaxy Store.
+    - **Galaxy Tablet & Flagship Apps (2011–2013):** Managed 3rd party apps, maintained releases of Tablet products, developed Quick Panel and Video Player features.
