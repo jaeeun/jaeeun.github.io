@@ -45,6 +45,10 @@ img { max-width: 100%; display: block; }
   color: transparent;
 }
 
+.accent-text {
+  color: var(--accent);
+}
+
 /* ---------- Sticky top nav ---------- */
 .nav {
   position: sticky;
@@ -213,6 +217,53 @@ img { max-width: 100%; display: block; }
   padding: 6px 12px;
   border-radius: 999px;
   white-space: nowrap;
+}
+
+/* ---------- Patents ---------- */
+.patents-grid { display: grid; gap: 0; }
+.patent-card {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.patent-card:last-child { border-bottom: none; }
+.patent-number {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+.patent-title {
+  flex: 1;
+  margin: 0;
+  font-size: .92rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+.patent-link {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color .15s;
+}
+.patent-link:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .patent-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 10px 0;
+  }
+  .patent-link { align-self: flex-end; }
 }
 
 /* ---------- Experience (Career Timeline) ---------- */
