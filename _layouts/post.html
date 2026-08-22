@@ -7,7 +7,11 @@
     {% include topnav.html %}
     <main class="page narrow">
         <div class="wrap">
+            {% if project %}
+            <a class="backlink" href="{{ site.url }}/Site/projects/">← All projects</a>
+            {% else %}
             <a class="backlink" href="{{ site.url }}/Site/posts/">← All posts</a>
+            {% endif %}
             <div class="page-head">
                 <h1>{{ title }}</h1>
                 <div class="postmeta">

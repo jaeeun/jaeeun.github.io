@@ -12,9 +12,9 @@
                 <h1>{{ title }}</h1>
                 <p class="sub">Notes on graphics, Android, machine learning — and life.</p>
             </div>
-            {% assign listed_posts = collections.post | rejectProjects %}
+            {% assign listed_posts = collections.post %}
             <div class="filterbar" role="group" aria-label="Filter posts by tag">
-                {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips" | split: "," %}
+                {% assign tag_words = "Life,Graphics,Unreal,ML,Study,Tips,Project Android,Project Graphics,Project Unreal" | split: "," %}
                 <a class="tagchip is-active" data-tag="" aria-pressed="true" href="{{ site.url }}/Site/posts/">All<span class="count">{{ listed_posts | size }}</span></a>
                 {% for w in tag_words %}<a class="tagchip" data-tag="{{ w }}" aria-pressed="false" href="{{ site.url }}/Site/posts/{{ w }}">{{ w }}<span class="count">{{ listed_posts | filterByTag: w | size }}</span></a>{% endfor %}
                 <a class="tagchip tagchip-link" href="{{ site.url }}/Site/tags/">Tag archive →</a>

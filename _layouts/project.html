@@ -13,13 +13,14 @@
                 <p class="sub">Selected engineering work across graphics, Android and simulation.</p>
             </div>
             <div class="filterbar">
-                <a class="tagchip" href="{{ site.url }}/Site/posts/Project Android">Android <span class="count">’11–’16</span></a>
-                <a class="tagchip" href="{{ site.url }}/Site/posts/Project Graphics">Graphics <span class="count">’16–’19</span></a>
-                <a class="tagchip" href="{{ site.url }}/Site/posts/Project Unreal">Unreal <span class="count">’19–’22</span></a>
+                <button class="tagchip is-active" data-filter="all">All</button>
+                <button class="tagchip" data-filter="Android">Android <span class="count">'11–'16</span></button>
+                <button class="tagchip" data-filter="Graphics">Graphics <span class="count">'16–'19</span></button>
+                <button class="tagchip" data-filter="Unreal">Unreal <span class="count">'19–'22</span></button>
             </div>
             <div class="proj-grid">
                 {% for post in collections.post %}{% if post.data.project %}
-                <a class="proj-card" href="{{ site.url }}{{ post.url }}">
+                <a class="proj-card" href="{{ site.url }}{{ post.url }}" data-category="{{ post.data.project }}">
                     <span class="proj-tag">{{ post.data.project }}</span>
                     <h3>{{ post.data.title }}</h3>
                     <p>{{ post.templateContent | striptags | truncatewords: 22 }}</p>
@@ -30,5 +31,30 @@
         </div>
     </main>
     {% include sitefooter.html %}
+
+    <script>
+    (function() {
+        var buttons = document.querySelectorAll('.filterbar .tagchip');
+        var cards = document.querySelectorAll('.proj-grid .proj-card');
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                // 활성 버튼 업데이트
+                buttons.forEach(function(b) { b.classList.remove('is-active'); });
+                btn.classList.add('is-active');
+
+                var filter = btn.getAttribute('data-filter');
+
+                cards.forEach(function(card) {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
